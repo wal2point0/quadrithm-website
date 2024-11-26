@@ -1,0 +1,989 @@
+/*
+ * Globals
+ */
+
+ *,
+ *:after,
+ *:before {
+     box-sizing: border-box;
+ }
+ :root {
+     --transition: 0.25s;
+     --spark: 1.8s;
+     --speed: 1.2s;
+ }
+ 
+ 
+ 
+ /* Custom default button */
+ .btn-outline-success,
+ .btn-outline-success,
+ .btn-outline-success:focus {
+   /* color: #BF7545; */
+   border-color: #BF7545; 
+ }
+ 
+ 
+ /*
+  * Base structure
+  */
+
+ /* Switzer Bold */
+  @font-face {
+    font-family: 'Switzer-Bold';
+    src: url('/fonts/switzer/Switzer-Bold.woff2') format('woff2'),
+         url('/fonts/switzer/Switzer-Bold.woff') format('woff'),
+         url('/fonts/switzer/Switzer-Bold.ttf') format('truetype');
+         font-weight: 700;
+         font-display: swap;
+         font-style: normal;
+  }
+
+   /* Switzer Semi Bold */
+  @font-face {
+    font-family: 'Switzer-Semibold';
+    src: url('/fonts/switzer/Switzer-Semibold.woff2') format('woff2'),
+         url('/fonts/switzer/Switzer-Semibold.woff') format('woff'),
+         url('/fonts/switzer/Switzer-Semibold.ttf') format('truetype');
+         font-weight: 600;
+         font-display: swap;
+         font-style: normal;
+  }
+  
+  /* Switzer Black */
+
+  @font-face {
+    font-family: 'Switzer-Black';
+    src: url('fonts/switzer/Switzer-Black.woff2') format('woff2'),
+         url('fonts/switzer/Switzer-Black.woff') format('woff'),
+         url('fonts/switzer/Switzer-Black.ttf') format('truetype');
+         font-weight: 900;
+         font-display: swap;
+         font-style: normal;
+  }
+
+  /* Manrope Regular */
+  @font-face {
+    font-family: 'Manrope-Regular';
+    src: url('/fonts/manrope/Manrope-Regular.ttf') format('truetype');
+         font-weight: 400;
+         font-display: swap;
+         font-style: normal;
+  }
+
+  /* Manrope Regular */
+  @font-face {
+    font-family: 'Switzer-Medium';
+    src: url('/fonts/manrope/Manrope-Medium.ttf') format('truetype');
+         font-weight: 500;
+         font-display: swap;
+         font-style: normal;
+  }
+
+
+  /* Beer Goggles Regular */
+  @font-face {
+    font-family: 'Beer-Goggles';
+    src: url('/fonts/beer-goggles/BEERG___.TFF') format('truetype');
+         font-weight: 900;
+         font-display: swap;
+         font-style: normal;
+  }
+
+  
+  
+  
+ 
+ body {
+   background-color: #F1F1F1;
+   color: #BF7545;
+ 
+ }
+ 
+ #specialisations {
+   background-color: #D6E5F5;
+   color: #3660EC;
+ }
+ 
+ #missions {
+   background-color: #F2EBD7;
+   color: #E35C18;
+ }
+ 
+ #mission-brief{
+   background-color: #45454A;
+   color: #C8FF00;
+ }
+ 
+ .cover-container {
+   max-width: 42em;
+ }
+ 
+ 
+ /*
+  * Header
+  */
+ 
+ .logos {
+   width: 180px;
+   height: 130px;
+   position: absolute;
+   left: 5px;
+ }
+ 
+ /*
+  * Menu
+  */
+ .menu {
+   display: flex;
+   margin-bottom: 50px;
+ }
+ 
+ /*
+  * Mobile Devices
+  */
+ 
+ 
+ /* .nav-masthead .nav-link {
+   color: rgba(255, 255, 255, .5);
+   border-bottom: .25rem solid transparent;
+ } */
+ 
+ /* .nav-masthead .nav-link:hover,
+ .nav-masthead .nav-link:focus {
+   border-bottom-color: rgba(255, 255, 255, .25);
+ } */
+ 
+ /* .nav-masthead .nav-link + .nav-link {
+   margin-left: 1rem;
+ } */
+ 
+ /* .nav-masthead .active {
+   color: #fff;
+   border-bottom-color: #fff;
+ } */
+ 
+ 
+ /* .circle {
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin: -4px 0 0 -4px;
+   pointer-events: none;
+   mix-blend-mode: screen;
+   z-index: 10;
+   box-shadow: 0px 0px 8px 0px #FDFCA9 inset, 0px 0px 24px 0px #FFEB3B, 0px 0px 8px 0px #FFFFFF42;
+ } */
+ 
+ .button-wrapper {
+   position: relative;
+   margin:auto;
+ }
+
+  /*
+  * CIRCULAR MENU BUTTONS
+  */
+ 
+ .button {
+   --cut: 0.2em;
+   --active:1;
+   --bg:
+         radial-gradient(
+             40% 50% at center 100%,
+             hsl(83 0% 72% / 0.05),
+             transparent
+         ),
+         radial-gradient(
+             80% 100% at center 120%,
+             hsl(73 0% 70% / 0.1),
+             transparent
+         ),
+         hsl(73 100% 50%);
+   background: var(--bg);
+   z-index: 1;
+   position: relative;
+   text-decoration: none;
+   text-align: center;
+   -webkit-appearance: none;
+      -moz-appearance: none;
+           appearance: none;
+   display: inline-block;
+   border-radius: 50%;
+   height: 100px;
+   width: 100px;
+ }
+
+ .button-cool {
+    --cut: 0.2em;
+    --active:1;
+    --bg:
+          radial-gradient(
+              40% 50% at center 100%,
+              hsl(201 0% 72% / 0.05),
+              transparent
+          ),
+          radial-gradient(
+              80% 100% at center 120%,
+              hsl(191 0% 70% / 0.1),
+              transparent
+          ),
+          hsl(191 94.5% 50.2%);
+    background: var(--bg);
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    display: inline-block;
+    color: #3660EC;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+  }
+
+  .button-excitement {
+    --cut: 0.2em;
+    --active:1;
+    --bg:
+      radial-gradient(
+        40% 50% at center 100%,
+        hsl(55 0% 72% / 0.05),
+        transparent
+      ),
+      radial-gradient(
+        80% 100% at center 120%,
+        hsl(45 0% 70% / 0.1),
+        transparent
+      ),
+      hsl(45 93% 48%);
+    background: var(--bg);
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    display: inline-block;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+  }
+
+  .button-contact {
+    --cut: 0.2em;
+    --active:1;
+    --bg:
+          radial-gradient(
+              40% 50% at center 100%,
+              hsl(330 0% 72% / 0.05),
+              transparent
+          ),
+          radial-gradient(
+              80% 100% at center 120%,
+              hsl(320 0% 70% / 0.1),
+              transparent
+          ),
+          hsl(320 86.4% 56.9%);
+    background: var(--bg);
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    display: inline-block;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+  }
+
+
+  /*
+  * MENU ITEMS
+  */
+
+  /* CALM BUTTONS */
+ .btn-outline-success{
+    border-radius: 30px;
+    --bg:
+    radial-gradient(
+        40% 50% at center 100%,
+        hsl(83 0% 72% / 0.05),
+        transparent
+    ),
+    radial-gradient(
+        80% 100% at center 120%,
+        hsl(73 0% 70% / 0.1),
+        transparent
+    ),
+    hsl(73 100% 50%);
+    background: var(--bg);
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    display: inline-block;
+    color: #BF7545;
+    --bs-btn-hover-bg: #BF7545;
+    --bs-btn-hover-color: #C8FF00;
+    --bs-btn-active-color: #C8FF00;
+    --bs-btn-active-bg: #7B3E11;
+    font-family: 'Switzer-Semibold';
+ }
+
+ /* COOL BUTTONS */
+ .btn-outline-primary{
+    border-radius: 30px;
+    --bg:
+          radial-gradient(
+              40% 50% at center 100%,
+              hsl(201 0% 72% / 0.05),
+              transparent
+          ),
+          radial-gradient(
+              80% 100% at center 120%,
+              hsl(191 0% 70% / 0.1),
+              transparent
+          ),
+          hsl(191 94.5% 50.2%);
+    background: var(--bg);
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    display: inline-block;
+    color: #FFF;
+    --bs-btn-hover-bg: #3660EC;
+    /* --bs-btn-active-color: #C8FF00; what happens when the button is clicked on */
+    /* --bs-btn-active-bg: #3660EC;  */
+ }
+
+   /* Excitement BUTTONS */
+   .btn-outline-warning{
+    border-radius: 30px;
+    --bg:
+      radial-gradient(
+        40% 50% at center 100%,
+        hsl(55 0% 72% / 0.05),
+        transparent
+      ),
+      radial-gradient(
+        80% 100% at center 120%,
+        hsl(45 0% 70% / 0.1),
+        transparent
+      ),
+      hsl(45 93% 48%);
+    background: var(--bg);
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    display: inline-block;
+    color: #fff;
+    border-color: #E35C18;
+    /* --bs-btn-hover-border-color: #E84500; */
+    --bs-btn-hover-bg: #E84500; 
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #fff; 
+    --bs-btn-active-bg: #E35C18; 
+ }
+
+  /* CURIOUS BUTTONS */
+  .btn-outline-danger{
+    border-radius: 30px;
+    --bg:
+          radial-gradient(
+              40% 50% at center 100%,
+              hsl(330 0% 72% / 0.05),
+              transparent
+          ),
+          radial-gradient(
+              80% 100% at center 120%,
+              hsl(320 0% 70% / 0.1),
+              transparent
+          ),
+          hsl(320 86.4% 56.9%);
+    background: var(--bg);
+    z-index: 1;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    display: inline-block;
+    color: #C8FF00;
+    border-color: #C8FF00;
+    --bs-btn-hover-bg: #C8FF00;
+    --bs-btn-hover-color: #F032B1;
+    --bs-btn-active-bg: #dc3545; 
+ }
+
+ 
+   /*
+  * BUTTON GLOWS
+  */
+
+  /* CALM BEFORE BUTTON GLOW */
+ .button::before, .btn-outline-success::before {
+   content: "";
+   box-shadow: 0px 0px 24px 0px #FFEB3B;
+   /* -webkit-box-shadow: 0px 0px 24px 0px #FFEB3B; */
+   mix-blend-mode: screen;
+   -webkit-transition: opacity 0.3s;
+   transition: opacity 0.3s;
+   position: absolute;
+   top: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   border-radius: 999px;
+   opacity: 0;
+ }
+
+  /* CALM AFTER BUTTON GLOW */
+  .button::after, .btn-outline-success::after {
+    content: "";
+    box-shadow: 0px 0px 23px 0px #E7FF91 inset, 0px 0px 8px 0px #FFFFFF42;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 999px;
+    opacity: 0;
+  }
+
+ /* COOL BEFORE BUTTON GLOW */
+ .button-cool::before, .btn-outline-primary::before  {
+    content: "";
+    box-shadow: 0px 0px 24px 0px #94E9FC;
+    /* -webkit-box-shadow: 0px 0px 24px 0px #94E9FC; */
+    mix-blend-mode: screen;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 999px;
+    opacity: 0;
+  }
+
+
+  /* COOL AFTER BUTTON GLOW */
+ .button-cool::after, .btn-outline-primary::after {
+    content: "";
+    box-shadow: 0px 0px 23px 0px #EDF8FB inset, 0px 0px 8px 0px #FFFFFF42;
+    /* -webkit-box-shadow: 0px 0px 23px 0px #EDF8FB inset, 0px 0px 8px 0px #FFFFFF42; */
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 999px;
+    opacity: 0;
+  }
+
+  /* EXCITEMENT BEFORE BUTTON GLOW */
+  .button-excitement::before, .btn-outline-warning::before  {
+    content: "";
+    box-shadow: 0px 0px 24px 0px #FF7E3D;
+    mix-blend-mode: screen;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 999px;
+    opacity: 0;
+  }
+  
+  /* EXCITEMENT AFTER BUTTON GLOW */
+  .button-excitement::after, .btn-outline-warning::after {
+    content: "";
+    box-shadow: 0px 0px 23px 0px #FDFCA9 inset, 0px 0px 8px 0px #FFFFFF42;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 999px;
+    opacity: 0;
+  }
+
+   /* CONTACT BEFORE BUTTON GLOW */
+ .button-contact::before, .btn-outline-danger::before  {
+  content: "";
+  box-shadow: 0px 0px 24px 0px #FF43C1;
+  mix-blend-mode: screen;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 999px;
+  opacity: 0;
+}
+
+  /* CONTACT AFTER BUTTON GLOW */
+  .button-contact::after, .btn-outline-danger::after {
+    content: "";
+    box-shadow: 0px 0px 23px 0px #FF90DA inset, 0px 0px 8px 0px #FFFFFF42;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 999px;
+    opacity: 0;
+  }
+ 
+  /*
+  * BUTTON HOVER EFFECTS
+  */
+ .button-wrapper:hover {
+   .button::before, .button::after, .button-cool::before, .button-cool::after, .btn-outline-success::before, .btn-outline-success::after, .btn-outline-primary::before, .btn-outline-primary::after, .button-contact::before, .button-contact::after, .btn-outline-danger::before, .btn-outline-danger::after, .button-excitement::before, .button-excitement::after, .btn-outline-warning::before, .btn-outline-warning::after {
+     opacity: 1;
+   }
+   
+   .dot { 
+    -webkit-transform: translate(0, 0) rotate(var(--rotatation));
+    transform: translate(0, 0) rotate(var(--rotatation));
+   }
+   
+   .dot::after {
+     -webkit-animation-play-state: running;
+             animation-play-state: running;
+   }
+ }
+ 
+  /*
+  * ATOMS THAT SURROUND THE MAIN MENU BUTTON
+  */
+ .dot {
+   display: block;
+   position: absolute;
+   -webkit-transition: transform calc(var(--speed) / 12) ease;
+   transition: transform calc(var(--speed) / 12) ease;
+   width: var(--size);
+   height: var(--size);
+   -webkit-transform: translate(var(--starting-x), var(--starting-y)) rotate(var(--rotatation));
+   transform: translate(var(--starting-x), var(--starting-y)) rotate(var(--rotatation));
+   
+ }
+
+  /* CALM AFTER DOT ANIMATION */
+ .dot::after {
+   content: "";
+   -webkit-animation: hoverFirefly var(--speed) infinite, dimFirefly calc(var(--speed) / 2) infinite calc(var(--speed) / 3);
+           animation: hoverFirefly var(--speed) infinite, dimFirefly calc(var(--speed) / 2) infinite calc(var(--speed) / 3);
+   -webkit-animation-play-state: paused;
+           animation-play-state: paused; 
+   display: block;
+   border-radius: 100%;
+   background: #BF7545;
+   width: 100%;
+   height: 100%;
+   box-shadow: 0px 0px 6px 0px #BF7545, 0px 0px 4px 0px #BF7545 inset, 0px 0px 2px 1px #c8ff00;
+ }
+
+   /* COOL AFTER DOT ANIMATION */
+ .dot-cool::after {
+    content: "";
+    -webkit-animation: hoverFirefly var(--speed) infinite, dimFirefly calc(var(--speed) / 2) infinite calc(var(--speed) / 3);
+            animation: hoverFirefly var(--speed) infinite, dimFirefly calc(var(--speed) / 2) infinite calc(var(--speed) / 3);
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused; 
+    display: block;
+    border-radius: 100%;
+    background: #3660EC;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 6px 0px #3660EC, 0px 0px 4px 0px #3660EC inset, 0px 0px 2px 1px #94E9FC;
+  }
+
+  /* EXCITEMENT AFTER DOT ANIMATION */
+ .dot-excitement::after {
+  content: "";
+  -webkit-animation: hoverFirefly var(--speed) infinite, dimFirefly calc(var(--speed) / 2) infinite calc(var(--speed) / 3);
+          animation: hoverFirefly var(--speed) infinite, dimFirefly calc(var(--speed) / 2) infinite calc(var(--speed) / 3);
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused; 
+  display: block;
+  border-radius: 100%;
+  background: #E35C18;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 6px 0px #E35C18, 0px 0px 4px 0px #E35C18 inset, 0px 0px 2px 1px #FDFCA9;
+}
+
+ /* CURIOUS AFTER DOT ANIMATION */
+ .dot-curious::after {
+  content: "";
+  -webkit-animation: hoverFirefly var(--speed) infinite, dimFirefly calc(var(--speed) / 2) infinite calc(var(--speed) / 3);
+          animation: hoverFirefly var(--speed) infinite, dimFirefly calc(var(--speed) / 2) infinite calc(var(--speed) / 3);
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused; 
+  display: block;
+  border-radius: 100%;
+  background: #c8ff00;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 6px 0px #c8ff00, 0px 0px 4px 0px #c8ff00 inset, 0px 0px 2px 1px #FF43C1;
+}
+
+ 
+ .dot-1 {
+   --rotatation: 0deg;
+   --speed: 14s;
+   --size: 6px;
+   --starting-x: 30px;
+   --starting-y: 20px;
+   top: 2px;
+   left: -16px;
+   opacity: 0.7;
+ }
+ 
+ .dot-2 {
+   --rotatation: 122deg;
+   --speed: 16s;
+   --size: 3px;
+   --starting-x: 40px;
+   --starting-y: 10px;
+   top: 1px;
+   left: 0px;
+   opacity: 0.7;
+ }
+ 
+ .dot-3 {
+   --rotatation: 39deg;
+   --speed: 20s;
+   --size: 4px;
+   --starting-x: -10px;
+   --starting-y: 20px;
+   top: -8px;
+   right: 14px;
+ }
+ 
+ .dot-4 {
+   --rotatation: 220deg;
+   --speed: 18s;
+   --size: 2px;
+   --starting-x: -30px;
+   --starting-y: -5px;
+   bottom: 4px;
+   right: -14px;
+   opacity: 0.9;
+ }
+ 
+ .dot-5 {
+   --rotatation: 190deg;
+   --speed: 22s;
+   --size: 5px;
+   --starting-x: -40px;
+   --starting-y: -20px;
+   bottom: -6px;
+   right: -3px;
+ }
+ 
+ .dot-6 {
+   --rotatation: 20deg;
+   --speed: 15s;
+   --size: 4px;
+   --starting-x: 12px;
+   --starting-y: -18px;
+   bottom: -12px;
+   left: 30px;
+   opacity: 0.7;
+ }
+ 
+ .dot-7 {
+   --rotatation: 300deg;
+   --speed: 19s;
+   --size: 3px;
+   --starting-x: 6px;
+   --starting-y: -20px;
+   bottom: -16px;
+   left: 44px;
+ }
+
+ @-webkit-keyframes dimFirefly {
+  0% {
+      -webkit-opacity: 1;
+  }
+  25% {
+      -webkit-opacity: 0.4;
+  }
+  50% {
+      -webkit-opacity: 0.8;
+  }
+  75% {
+      -webkit-opacity: 0.5;
+  }
+  100% {
+      -webkit-opacity: 1;
+  }
+}
+ 
+ @keyframes dimFirefly {
+   0% {
+     opacity: 1;
+   }
+   25% {
+     opacity: 0.4;
+   }
+   50% {
+     opacity: 0.8;
+   }
+   75% {
+     opacity: 0.5;
+   }
+   100% {
+     opacity: 1;
+   }
+ }
+
+  @-webkit-keyframes hoverFirefly {
+    0% {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+    }
+    12% {
+        -webkit-transform: translate(3px, 1px);
+        -ms-transform: translate(3px, 1px);
+    }
+    24% {
+        -webkit-transform: translate(-2px, 3px);
+        -ms-transform: translate(-2px, 3px);
+    }
+    37% {
+        -webkit-transform: translate(2px, -2px);
+        -ms-transform: translate(2px, -2px);
+    }
+    55% {
+        -webkit-transform: translate(-1px, 0);
+        -ms-transform: translate(-1px, 0);
+    }
+    74% {
+        -webkit-transform: translate(0, 2px);
+        -ms-transform: translate(0, 2px);
+    }
+    88% {
+        -webkit-transform: translate(-3px, -1px);
+        -ms-transform: translate(-3px, -1px);
+    }
+    100% {
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+    }
+}
+ 
+ @keyframes hoverFirefly {
+     0% {
+       transform: translate(0, 0);
+     }
+     12% {
+       transform: translate(3px, 1px);
+     }
+     24% {
+       transform: translate(-2px, 3px);
+     }
+     37% {
+       transform: translate(2px, -2px);
+     }
+     55% {
+       transform: translate(-1px, 0);
+     }
+     74% {
+       transform: translate(0, 2px);
+     }
+     88% {
+       transform: translate(-3px, -1px);
+     }
+     100% {
+       transform: translate(0, 0);
+     }
+ }
+
+
+ 
+  /*
+  * SPARK ANIMATION
+  */
+
+ .spark {
+     position: absolute;
+     inset: 0;
+     border-radius: 100px;
+     rotate: 0deg;
+     overflow: hidden;
+     -webkit-mask: linear-gradient(white, transparent 50%);
+             mask: linear-gradient(white, transparent 50%);
+     /* -webkit-animation: flip calc(var(--spark) * 2) infinite steps(2, end);
+             animation: flip calc(var(--spark) * 2) infinite steps(2, end); */
+      -webkit-animation-name: flip;
+      -webkit-animation-duration: calc(var(--spark) * 2);
+      -webkit-animation-timing-function: steps(2, end);
+      -webkit-animation-iteration-count: infinite;
+      animation-name: flip;
+      animation-duration: calc(var(--spark) * 2);
+      animation-timing-function: steps(2, end);
+      animation-iteration-count: infinite;
+
+ }
+
+ @-webkit-keyframes flip {
+  to {
+      -webkit-rotate: 360deg;
+  }
+}
+ 
+ @keyframes flip {
+     to {
+         rotate: 360deg;
+     }
+ }
+
+ 
+ .spark:before {
+     content: "";
+     position: absolute;
+     width: 200%;
+     aspect-ratio: 1;
+     top: 0%;
+     left: 50%;
+     z-index: -1;
+     -webkit-translate: -50% -15%;
+     translate: -50% -15%;
+     rotate: 0;
+     -webkit-transform: rotate(-90deg);
+     transform: rotate(-90deg);
+     opacity: calc((var(--active)) + 0.4);
+     background: conic-gradient(
+         from 0deg,
+         transparent 0 340deg,
+         white 360deg
+     );
+     transition: opacity var(--transition);
+     /* -webkit-animation: rotate var(--spark) linear infinite both; */
+     -webkit-animation-name: rotate;
+     -webkit-animation-duration: var(--spark);
+     -webkit-animation-timing-function: linear;
+     -webkit-animation-iteration-count: infinite;
+     -webkit-animation-fill-mode: both;
+      animation-name: rotate;
+      animation-duration: var(--spark);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+ }
+            
+ 
+ .spark:after {
+     content: "";
+     position: absolute;
+     inset: var(--cut);
+     border-radius: 100px;
+ }
+ 
+ .backdrop {
+     position: absolute;
+     inset: var(--cut);
+     background: var(--bg);
+     border-radius: 100px;
+     transition: background var(--transition) opacity var(--transition);
+ }
+ 
+
+ @-webkit-keyframes rotate {
+  to {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+}
+ 
+ @keyframes rotate {
+     to {
+         transform: rotate(90deg);
+     }
+ }
+
+
+ 
+
+  /*
+  * TEXT ON THE MAIN BUTTON
+  */
+
+ .text {
+     translate: 2% -6%;
+     letter-spacing: 0.01ch;
+     color: #BF7545;
+     font-weight: bold;
+     font-family: 'Switzer-Semibold';
+ }
+
+  
+ .text-cool {
+    translate: 2% -6%;
+    letter-spacing: 0.01ch;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.text-contact {
+  translate: 2% -6%;
+  letter-spacing: 0.01ch;
+  color: #C8FF00;
+  font-weight: bold;
+}
+
+
+
+  /*
+  * MOBILE DEVICES
+ */
+ 
+ @media (max-width: 768px) { 
+   .myrow {
+     width: 22%;
+     margin: auto;
+   }
+ }
+ 
+ @media (max-width: 576px) { 
+   .myrow {
+     width: 27%;
+     margin: auto;
+   }
+ }
