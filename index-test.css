@@ -84,7 +84,7 @@
   /* Beer Goggles Regular */
   @font-face {
     font-family: 'Beer-Goggles';
-    src: url('/fonts/beer-goggles/BEERG___.TFF') format('truetype');
+    src: url('/fonts/beer-goggles/BEERG___.TTF') format('truetype');
          font-weight: 900;
          font-display: swap;
          font-style: normal;
