@@ -25,68 +25,93 @@
  
  
  /*
-  * Base structure
+  * FONTS
   */
+  
+  /*SWITZER FONTS*/
+  @font-face {
+    font-family: 'Switzer-Regular';
+    src: url('./fonts/switzer/Switzer-Regular.woff2') format('woff2'),
+         url('./fonts/switzer/Switzer-Regular.woff') format('woff'),
+         url('./fonts/switzer/Switzer-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
 
- /* Switzer Bold */
+  @font-face {
+    font-family: 'Switzer-Medium';
+    src: url('./fonts/switzer/Switzer-Medium.woff2') format('woff2'),
+         url('./fonts/switzer/Switzer-Medium.woff') format('woff'),
+         url('./fonts/switzer/Switzer-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+
   @font-face {
     font-family: 'Switzer-Bold';
-    src: url('/fonts/switzer/Switzer-Bold.woff2') format('woff2'),
-         url('/fonts/switzer/Switzer-Bold.woff') format('woff'),
-         url('/fonts/switzer/Switzer-Bold.ttf') format('truetype');
+    src: url('./fonts/switzer/Switzer-Semibold.woff2') format('woff2'),
+         url('./fonts/switzer/Switzer-Bold.woff') format('woff'),
+         url('./fonts/switzer/Switzer-Bold.ttf') format('truetype');
          font-weight: 700;
          font-display: swap;
          font-style: normal;
   }
 
-   /* Switzer Semi Bold */
+
   @font-face {
-    font-family: 'Switzer-Semibold';
-    src: url('/fonts/switzer/Switzer-Semibold.woff2') format('woff2'),
-         url('/fonts/switzer/Switzer-Semibold.woff') format('woff'),
-         url('/fonts/switzer/Switzer-Semibold.ttf') format('truetype');
+    font-family:'Switzer-Semibold';
+    src: url('./fonts/switzer/Switzer-Semibold.woff2') format('woff2'),
+         url('./fonts/switzer/Switzer-Semibold.woff') format('woff'),
+         url('./fonts/switzer/Switzer-Semibold.ttf') format('truetype');
          font-weight: 600;
          font-display: swap;
          font-style: normal;
   }
   
-  /* Switzer Black */
 
   @font-face {
     font-family: 'Switzer-Black';
-    src: url('fonts/switzer/Switzer-Black.woff2') format('woff2'),
-         url('fonts/switzer/Switzer-Black.woff') format('woff'),
-         url('fonts/switzer/Switzer-Black.ttf') format('truetype');
+    src: url('./fonts/switzer/Switzer-Black.woff2') format('woff2'),
+         url('./fonts/switzer/Switzer-Black.woff') format('woff'),
+         url('./fonts/switzer/Switzer-Black.ttf') format('truetype');
          font-weight: 900;
          font-display: swap;
          font-style: normal;
   }
 
-  /* Manrope Regular */
+  
+  /*SWITZER FONTS*/
+
   @font-face {
     font-family: 'Manrope-Regular';
-    src: url('/fonts/manrope/Manrope-Regular.ttf') format('truetype');
-         font-weight: 400;
-         font-display: swap;
-         font-style: normal;
+    src: url('./fonts/manrope/Manrope-Regular.woff2') format('woff2'),
+         url('./fonts/manrope/Manrope-Regular.woff') format('woff'),
+         url('./fonts/manrope/Manrope-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
   }
 
-  /* Manrope Regular */
   @font-face {
-    font-family: 'Switzer-Medium';
-    src: url('/fonts/manrope/Manrope-Medium.ttf') format('truetype');
-         font-weight: 500;
-         font-display: swap;
-         font-style: normal;
+    font-family: 'Manrope-Medium';
+    src: url('./fonts/manrope/Manrope-Medium.woff2') format('woff2'),
+         url('./fonts/manrope/Manrope-Medium.woff') format('woff'),
+         url('./fonts/manrope/Manrope-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
   }
 
 
-  /* Beer Goggles Regular */
+  /*BEER GOGGLES FONTS*/
   @font-face {
     font-family: 'Beer-Goggles';
-    src: url('/fonts/beer-goggles/BEERG___.TTF') format('truetype');
-         font-weight: 900;
-         font-display: swap;
+    src: url('./fonts/beer/beerg.woff2') format('woff2'),
+         url('./fonts/beer/beerg.woff') format('woff'),
+         url('./fonts/beer/beerg.ttf') format('truetype');
+         font-weight: normal;
          font-style: normal;
   }
 
@@ -338,7 +363,7 @@
     --bs-btn-hover-color: #C8FF00;
     --bs-btn-active-color: #C8FF00;
     --bs-btn-active-bg: #7B3E11;
-    font-family: 'Switzer-Semibold';
+    font-family: 'Switzer-Medium', Helvetica, Arial, sans-serif;
  }
 
  /* COOL BUTTONS */
@@ -367,12 +392,13 @@
     display: inline-block;
     color: #FFF;
     --bs-btn-hover-bg: #3660EC;
+    font-family: 'Switzer-Regular', Helvetica, Arial, sans-serif;
     /* --bs-btn-active-color: #C8FF00; what happens when the button is clicked on */
     /* --bs-btn-active-bg: #3660EC;  */
  }
 
    /* Excitement BUTTONS */
-   .btn-outline-warning{
+   .btn-outline-warning {
     border-radius: 30px;
     --bg:
       radial-gradient(
@@ -402,6 +428,7 @@
     --bs-btn-hover-color: #fff;
     --bs-btn-active-color: #fff; 
     --bs-btn-active-bg: #E35C18; 
+    font-family: 'Switzer-Regular', Helvetica, Arial, sans-serif;
  }
 
   /* CURIOUS BUTTONS */
@@ -432,7 +459,8 @@
     border-color: #C8FF00;
     --bs-btn-hover-bg: #C8FF00;
     --bs-btn-hover-color: #F032B1;
-    --bs-btn-active-bg: #dc3545; 
+    --bs-btn-active-bg: #dc3545;
+    font-family: 'Switzer-Regular', Helvetica, Arial, sans-serif;
  }
 
  
@@ -538,9 +566,10 @@
   }
 
    /* CONTACT BEFORE BUTTON GLOW */
- .button-contact::before, .btn-outline-danger::before  {
+ .button-contact::before, .btn-outline-danger::before {
   content: "";
-  box-shadow: 0px 0px 24px 0px #FF43C1;
+  /* box-shadow: 0px 0px 24px 0px #FF43C1; */
+  box-shadow: 0px 0px 24px 0px #E7FF91;
   mix-blend-mode: screen;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
@@ -895,8 +924,8 @@
          white 360deg
      );
      transition: opacity var(--transition);
-     /* -webkit-animation: rotate var(--spark) linear infinite both; */
-     -webkit-animation-name: rotate;
+     animation: rotate var(--spark) linear infinite both;
+     /* -webkit-animation-name: rotate;
      -webkit-animation-duration: var(--spark);
      -webkit-animation-timing-function: linear;
      -webkit-animation-iteration-count: infinite;
@@ -905,7 +934,7 @@
       animation-duration: var(--spark);
       animation-timing-function: linear;
       animation-iteration-count: infinite;
-      animation-fill-mode: both;
+      animation-fill-mode: both; */
  }
             
  
@@ -949,8 +978,8 @@
      translate: 2% -6%;
      letter-spacing: 0.01ch;
      color: #BF7545;
-     font-weight: bold;
-     font-family: 'Switzer-Semibold';
+     /* font-weight: bold; */
+     font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
  }
 
   
@@ -958,14 +987,16 @@
     translate: 2% -6%;
     letter-spacing: 0.01ch;
     color: #FFF;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif; 
 }
 
 .text-contact {
   translate: 2% -6%;
   letter-spacing: 0.01ch;
   color: #C8FF00;
-  font-weight: bold;
+  /* font-weight: bold; */
+  font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
 }
 
 
