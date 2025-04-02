@@ -1,11 +1,25 @@
 var audio = document.getElementById("myAudio"); 
+var aboutQuadrithmAudio = document.getElementById("aboutQuadrithmAudio"); 
+var specialisationAudio = document.getElementById("specialisationAudio"); 
+var classifiedAudio = document.getElementById("classifiedAudio"); 
+var assignMissionAudio = document.getElementById("assignMissionAudio"); 
+
+
 var openingCredits = document.getElementById("fly-in");
 var wakeupButton = document.getElementById("wakeQassandraButton");
 var menu = document.getElementById("menu");
 var showCanvas = document.getElementById("canvasDiv");
 var skipIntro = document.querySelector('.skip');
+
+var findOutMore = document.getElementById("buttonOne");
+var quadrithmSpecilisations = document.getElementById("buttonTwo");
+var classifiedMissions = document.getElementById("buttonThree");
+var assignMission = document.getElementById("buttonFour");
+
 var wakeTimeout;
+
 window.addEventListener("load", showWakeButton, false);
+window.addEventListener("load", disappearSkipButton, false);
 wakeupButton.addEventListener("click", hideOpeningCredits);
 wakeupButton.addEventListener("click", removeWakeQassandraButton);
 wakeupButton.addEventListener("click", playAudio); 
@@ -13,6 +27,11 @@ wakeupButton.addEventListener("click", showQassandra);
 wakeupButton.addEventListener("click", showElements, false);
 wakeupButton.addEventListener("click", removeSkipButton);
 skipIntro.addEventListener("click", startStory);
+
+findOutMore.addEventListener("mouseover", playAboutQuadrithmAudio);
+quadrithmSpecilisations.addEventListener("mouseover", playSpecialisationAudio);
+classifiedMissions.addEventListener("mouseover", playClassifiedAudio);
+assignMission.addEventListener("mouseover", playAssignMissionAudio);
 
 
 
@@ -55,12 +74,17 @@ function canvasSupport() {
 }
 
 function hideOpeningCredits(){ //try using visibility instead;
-	openingCredits.style.visibility = 'hidden'; 
+	// openingCredits.style.visibility = 'hidden'; 
+	openingCredits.style.display = 'none';
 	
 }
 
 function removeSkipButton(){
 	skipIntro.style.display = 'none';
+}
+
+function disappearSkipButton (){
+	setTimeout(removeSkipButton, 33000);	
 }
 
 function showSkipButton(){
@@ -76,10 +100,7 @@ function removeWakeQassandraButton(){
 }
 
 function showWakeButton (){
-	//   openingCredits.addEventListener("animationend", () => {
-	// 	wakeupButton.style.display = 'block';
-	// 	wakeupButton.classList.add('animate__animated', 'animate__zoomIn');
-	//   });
+
 	wakeTimeout = setTimeout(function(){
 		wakeupButton.style.display = 'block';
 		wakeupButton.classList.add('animate__animated', 'animate__zoomIn');
@@ -95,6 +116,23 @@ function showMenu (){
 	menu.style.visibility = "visible";
 	menu.classList.add('animate__animated', 'animate__fadeInDown');
 }
+
+function playAboutQuadrithmAudio(){
+	aboutQuadrithmAudio.play();
+}
+
+function playSpecialisationAudio(){
+	specialisationAudio.play();
+}
+
+function playClassifiedAudio(){
+	classifiedAudio.play();
+}
+
+function playAssignMissionAudio(){
+	assignMissionAudio.play();
+}
+
 
 function playAudio(){
 	audio.play();

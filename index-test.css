@@ -149,12 +149,20 @@
   * Header
   */
  
- .logos {
+ /* .logos {
    width: 180px;
    height: 130px;
    position: absolute;
    left: 5px;
- }
+ } */
+
+ .logos {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 5px;
+  margin-top: -25px;
+}
  
  /*
   * Menu
@@ -1080,8 +1088,13 @@
 
 .skip {
   cursor: pointer;
+  text-transform: uppercase;
+  font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
 }
 
+.bi-fast-forward-fill {
+  font-size: 1em;
+}
 
 #menu {
   visibility: hidden;
@@ -1091,6 +1104,10 @@
    display: none;
 }
 
+
+  /*
+  * FLY IN INTRODUCTION
+  */
 #fly-in {
   font-size: 4em;
   margin: 5vh auto;
@@ -1102,6 +1119,7 @@
   display: block;
   font-size: .4em;
   opacity: .8;
+  font-family: 'Manrope-Medium', sans-serif;
 }
 
 #fly-in div {
@@ -1111,7 +1129,20 @@
   left: 10vw;
   width: 80vw;
   animation: switch 48s linear;
+  font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
 }
+
+#fly-in em {
+  font-style: normal;
+  font-family: 'Beer-Goggles', 'Switzer-Semibold';
+}
+
+/* .paused{
+  -webkit-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -o-animation-play-state:paused; 
+  animation-play-state:paused;
+} */
 
 /* #fly-in button {
   position: fixed;
@@ -1153,7 +1184,9 @@
 canvas {
   width: 100%;
   max-width: max-content;
-  margin-bottom: 70px;
+  margin-bottom: 70px; /* might have to change this to 20px */
+  position: relative;
+  z-index: 2;
 }
 
 
@@ -1161,44 +1194,289 @@ canvas {
   /*
   * MOBILE DEVICES
  */
- 
+
+ @media (max-width: 1200px) { 
+  /* .myrow {
+    width: 22%;
+    margin: auto;
+  } */
+
+  canvas {
+   width: 100%;
+   max-width: max-content;
+   margin-bottom: 255px;
+}
+
+/* canvas {
+  width: 100%;
+  max-width: max-content;
+  margin-bottom: 250px;
+} */
+
+ .wake-qassandra {
+   bottom: 550px;
+   display: none;
+ }
+
+  /* .top {
+   position: absolute;
+   bottom: 200px;
+ } */
+
+}
+
+@media screen 
+  and (device-width: 1024px) 
+  and (device-height: 600px) {
+
+    canvas {
+      width: 65%;
+      max-width: max-content;
+      margin-bottom: 10px;
+  }
+
+  .wake-qassandra {
+    bottom: 200px;
+    display: none;
+}
+
+#fly-in {
+  font-size: 2.5em;
+  margin: 5vh auto;
+  text-transform: uppercase;
+}
+
+}
+
+ /* Medium devices (tablets, less than 992px) */
+ @media (max-width: 992px) { 
+  /* .myrow {
+    width: 22%;
+    margin: auto;
+  } */
+
+  canvas {
+   width: 100%;
+   max-width: max-content;
+   margin-bottom: 200px;
+}
+
+/* canvas {
+  width: 100%;
+  max-width: max-content;
+  margin-bottom: 250px;
+} */
+
+ .wake-qassandra {
+   bottom: 550px;
+   display: none;
+ }
+
+  .top {
+   position: absolute;
+   bottom: 200px;
+ }
+
+}
+
+  /* Small devices (landscape phones, less than 768px) */
  @media (max-width: 768px) { 
-   .myrow {
+   /* .myrow {
      width: 22%;
      margin: auto;
-   }
+   } */
+
+   canvas {
+    width: 100%;
+    max-width: max-content;
+    margin-bottom: 120px;
+}
+
+  .wake-qassandra {
+    bottom: 420px;
+    display: none;
+  }
 
    .top {
     position: absolute;
     bottom: 200px;
   }
 
-   .menu {
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    position: relative;
-    padding-top: 100px;
-    z-index: 2; 
-   }
  }
- 
- @media (max-width: 576px) { 
-   .myrow {
-     width: 27%;
-     margin: auto;
-   }
 
-   .top {
-    position: absolute;
-    bottom: 300px;
+  /* EXTRA SMALL DEVICES */
+@media (max-width: 576px) { 
+  .myrow {
+    width: 27%;
+    margin: auto;
   }
 
-   .menu {
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    position: relative;
-    padding-top: 200px;
-    z-index: 2; 
-   }
+  .wake-qassandra {
+    bottom: 350px;
+    display: none;
+  }
 
+  .top {
+   position: absolute;
+   bottom: 300px;
  }
+
+  .menu {
+   -webkit-backdrop-filter: blur(5px);
+   backdrop-filter: blur(5px);
+   position: relative;
+   padding-top: 200px;
+   z-index: 2; 
+  }
+
+  canvas {
+    width: 100%;
+    max-width: max-content;
+    margin-bottom: 50px;
+  }
+
+  /* canvas {
+    width: 100%;
+    max-width: max-content;
+    margin-bottom: 32px;
+} */
+
+
+   #fly-in {
+   font-size: 2.5em;
+   margin: 5vh auto;
+   /* height: 20vh;  */
+   text-transform: uppercase;
+ }
+
+ #fly-in div {
+   position: fixed;
+    margin: 2vh 0;
+    opacity: 0;
+    margin-top: 250px;
+    left: 10vw;
+    width: 80vw;
+    animation: switch 48s linear;
+    font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
+  }
+  
+
+ #fly-in span {
+   display: block;
+   font-size: .4em;
+   opacity: .8;
+   font-family: 'Manrope-Medium', sans-serif;
+ }
+
+ /* .logos {
+   width: 150px;
+   height: 100px;
+   position: absolute;
+   left: 5px;
+ } */
+ 
+ .logos {
+   width: 120px;
+   height: 120px;
+   position: absolute;
+   left: 5px;
+ }
+
+}
+
+
+ /* EXTRA SMALL DEVICES */
+ @media (max-width: 375px) { 
+  .myrow {
+    width: 30%;
+    margin: auto;
+  }
+
+  .top {
+  position: absolute;
+  bottom: 300px;
+}
+
+.wake-qassandra {
+  bottom: 300px;
+  display: none;
+}
+
+/* canvas {
+  width: 100%;
+  max-width: max-content;
+  margin-bottom: 130px;
+} */
+
+canvas {
+  width: 100%;
+  max-width: max-content;
+  margin-bottom: 30px;
+}
+
+/* canvas {
+  width: 100%;
+  max-width: max-content;
+  margin-bottom: -20px;
+} */
+
+/* .menu {
+ -webkit-backdrop-filter: blur(5px);
+ backdrop-filter: blur(5px);
+ position: relative;
+ padding-top: 200px;
+ z-index: 2; 
+} */
+
+.menu {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  position: relative;
+  padding-top: 150px;
+  z-index: 2;
+}
+
+ #fly-in {
+ font-size: 2.5em;
+ margin: 5vh auto;
+ /* height: 20vh;  */
+ text-transform: uppercase;
+}
+
+#fly-in div {
+ position: fixed;
+  margin: 2vh 0;
+  opacity: 0;
+  margin-top: 250px;
+  left: 10vw;
+  width: 80vw;
+  animation: switch 48s linear;
+  font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
+}
+
+
+#fly-in span {
+ display: block;
+ font-size: .4em;
+ opacity: .8;
+ font-family: 'Manrope-Medium', sans-serif;
+}
+
+/* .logos {
+ width: 150px;
+ height: 100px;
+ position: absolute;
+ left: 5px;
+} */
+
+.logos {
+ width: 120px;
+ height: 120px;
+ position: absolute;
+ left: 5px;
+}
+
+}
+
+ 
+ 
