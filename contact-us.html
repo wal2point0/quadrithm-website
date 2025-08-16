@@ -17,7 +17,7 @@
 
   <body class="d-flex h-100 text-center" id="mission-brief">
 
-    
+     <!-- LOGO -->
       <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
           <header class="mb-auto">
               <div>
@@ -27,6 +27,34 @@
               </div>
           </header>
 
+          <!-- QASSANDRA AUDIO -->
+              <!-- <audio id="myAudio" autoplay muted></audio> you may need to change this when the website is live on the server-->
+              <audio id="myAudio" autoplay>
+                <source src="./audio/qassandra_intro.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+          
+              <audio id="aboutQuadrithmAudio" autoplay>
+                <source src="./audio/find_out_more.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+          
+              <audio id="specialisationAudio" autoplay>
+                <source src="./audio/specialisations.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+          
+              <audio id="classifiedAudio" autoplay>
+                <source src="./audio/classified.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+          
+              <audio id="assignMissionAudio" autoplay>
+                <source src="./audio/signpost.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+
+
         <main class="px-3">
           <!-- <h1>Cover your page.</h1>
           <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
@@ -35,19 +63,20 @@
           </p> -->
         </main>
 
+        <!-- MENU -->
         <div class="row menu">
           <!-- Button 1  -->
             <div class="col-md-2 button-wrapper">
-            <div class="collapse multi-collapse" id="multiCollapseExample1">
-                <button class="btn btn-outline-danger p-3 mb-3 mb-md-0 me-md-2" type="button" data-bs-toggle="collapse" aria-expanded="false">What is Quadrithm?</button>
-            </div>
+              <div class="collapse multi-collapse" id="multiCollapseExample1">
+                  <button class="btn btn-outline-danger p-3 px-md-2 px-lg-3 mb-3 mb-md-0 me-md-2" type="button" data-bs-toggle="collapse" aria-expanded="false" id="buttonOne">What is Quadrithm?</button>
+              </div>
             </div>
             
             <!-- Button 2  -->
             <div class="col-md-3 button-wrapper">
-            <div class="collapse multi-collapse" id="multiCollapseExample2">
-                <button class="btn btn-outline-danger p-3 mb-3 mb-md-0" type="button" data-bs-toggle="collapse" aria-expanded="false">Quadrithm's Specialisations</button>
-            </div>
+              <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <button class="btn btn-outline-danger p-3 px-md-2 px-lg-3 mb-3 mb-md-0" type="button" data-bs-toggle="collapse" aria-expanded="false" id="buttonTwo">Quadrithm's Specialties</button>
+              </div>
             </div>
       
             <div class="col-md-2 myrow button-wrapper">
@@ -70,20 +99,21 @@
           <!-- Button 3  -->
           <div class="col-md-3 button-wrapper">
               <div class="collapse multi-collapse" id="multiCollapseExample3">
-                  <button class="btn btn-outline-danger p-3 mb-3 mt-3 mb-md-0 mt-md-0" type="button" data-bs-toggle="collapse" aria-expanded="false">Quadrithm's Missions</button>
+                  <button class="btn btn-outline-danger p-3 px-lg-3 mb-3 mt-3 mb-md-0 mt-md-0" type="button" data-bs-toggle="collapse" aria-expanded="false" id="buttonThree">Quadrithm's Missions</button>
               </div>
           </div>
       
           <!-- Button 4  -->
           <div class="col-md-2 button-wrapper">
               <div class="collapse multi-collapse" id="multiCollapseExample4">
-                  <button class="btn btn-outline-danger p-3 me-md-4" type="button" data-bs-toggle="collapse" aria-expanded="false">Let's Collaborate</button>
+                  <button class="btn btn-outline-danger p-3 px-md-2 px-lg-3 highlighted-curious" type="button" data-bs-toggle="collapse" aria-expanded="false" id="buttonFour">Let's Collaborate</button>
               </div>
           </div>
       
         </div>
         
       </div>
+      <script src="qassandra.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    </body>
 </html>

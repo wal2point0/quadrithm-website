@@ -8,18 +8,46 @@ var assignMissionAudio = document.getElementById("assignMissionAudio");
 var openingCredits = document.getElementById("fly-in");
 var wakeupButton = document.getElementById("wakeQassandraButton");
 var menu = document.getElementById("menu");
+var menuBackground = document.getElementById("menuBlur");
+var menuButton = document.getElementById("menuButton"); 
 var showCanvas = document.getElementById("canvasDiv");
 var skipIntro = document.querySelector('.skip');
+// var aboutUsButtons = document.querySelector('.aboutus-buttons'); 
 
 var findOutMore = document.getElementById("buttonOne");
 var quadrithmSpecilisations = document.getElementById("buttonTwo");
 var classifiedMissions = document.getElementById("buttonThree");
 var assignMission = document.getElementById("buttonFour");
 
+
+var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
+collapseElementList[2].addEventListener('show.bs.collapse', function () {
+		// do something...
+			menuBackground.setAttribute('class', 'blur');
+});
+collapseElementList[2].addEventListener('hide.bs.collapse', function () {
+		// do something...
+			menuBackground.setAttribute('class', '');
+});
+
+
 var wakeTimeout;
+var aboutUsButtonsTimeout;
+
+
+findOutMore.addEventListener("mouseover", playAboutQuadrithmAudio);
+quadrithmSpecilisations.addEventListener("mouseover", playSpecialisationAudio);
+classifiedMissions.addEventListener("mouseover", playClassifiedAudio);
+assignMission.addEventListener("mouseover", playAssignMissionAudio);
 
 window.addEventListener("load", showWakeButton, false);
+// window.addEventListener("load", showAboutUsButtons, false);
 window.addEventListener("load", disappearSkipButton, false);
+// mediaQuery.addEventListener("change", menuBlur);
+
+
+
+// menuButton.addEventListener("click", toggleMenu);
 wakeupButton.addEventListener("click", hideOpeningCredits);
 wakeupButton.addEventListener("click", removeWakeQassandraButton);
 wakeupButton.addEventListener("click", playAudio); 
@@ -28,10 +56,7 @@ wakeupButton.addEventListener("click", showElements, false);
 wakeupButton.addEventListener("click", removeSkipButton);
 skipIntro.addEventListener("click", startStory);
 
-findOutMore.addEventListener("mouseover", playAboutQuadrithmAudio);
-quadrithmSpecilisations.addEventListener("mouseover", playSpecialisationAudio);
-classifiedMissions.addEventListener("mouseover", playClassifiedAudio);
-assignMission.addEventListener("mouseover", playAssignMissionAudio);
+
 
 
 
@@ -49,6 +74,7 @@ Debugger.log = function(message) {
 		return;
 	}
 }
+
 
 function showElements(){
 	canvasApp();
@@ -112,10 +138,38 @@ function showWakeButton (){
 	  };
 }
 
+// function showAboutUsButtons (){
+// 	aboutUsButtonsTimeout = setTimeout(function(){
+// 		aboutUsButtons.style.display = 'flex';
+// 		// aboutUsButtons.classList.add('animate__animated', 'animate__zoomIn');
+// 	},30000);	
+// }
+
+
 function showMenu (){
 	menu.style.visibility = "visible";
 	menu.classList.add('animate__animated', 'animate__fadeInDown');
 }
+
+//BACKUP CODE FOR BLUR
+
+// function menuBlur(){
+// 	if (mediaQuery.matches) { 
+// 		collapseElementList[2].addEventListener('show.bs.collapse', function () {
+// 		// do something...
+// 			menuBackground.setAttribute('class', 'blur');
+// 		})
+// 		collapseElementList[2].addEventListener('hide.bs.collapse', function () {
+// 		// do something...
+// 			menuBackground.setAttribute('class', '');
+// 		})
+
+// 	} else {
+// 		menuBackground.setAttribute('class', '');
+// 	}
+	
+// }
+
 
 function playAboutQuadrithmAudio(){
 	aboutQuadrithmAudio.play();
