@@ -621,6 +621,7 @@
    bottom: 0;
    border-radius: 999px;
    opacity: 0;
+   pointer-events: none;
  }
 
   /* CALM AFTER BUTTON GLOW */
@@ -636,6 +637,7 @@
     bottom: 0;
     border-radius: 999px;
     opacity: 0;
+    pointer-events: none;
   }
 
     /* WAKE QASSANDRA BEFORE BUTTON GLOW */
@@ -1289,6 +1291,8 @@ canvas {
   z-index: 2;
 }
 
+
+/* ABOUT US PLAY BUTTONS */
 .play-button {
     width: 90px;
     height: 90px;
@@ -1306,6 +1310,14 @@ canvas {
   display: none;
 }
 
+.playButtonText h3 {
+  font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
+}
+
+.playButtonText h5 {
+  font-family: 'Manrope-Medium', sans-serif;
+}
+
 .btn-outline-light {
   background-color: transparent;
   border-color: #BF7545;
@@ -1318,6 +1330,39 @@ canvas {
     background-color: #C8FF00;
     border-color: #BF7545;
     color: #BF7545;
+    --bs-btn-active-border-color: #BF7545;
+    --bs-btn-active-color: #BF7545;
+}
+
+/* SPECILISATIONS PLAY BUTTONS */
+.play-button-specialise {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    /* background-color: #0d6efd; */
+     color: #3660EC;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    transition: all 0.2s ease;
+    display: none;
+}
+
+
+.btn-outline-info {
+  background-color: transparent;
+  border-color: #3660EC;
+  border-width: thick;
+
+}
+
+.play-button-specialise:hover {
+    transform: scale(1.1);
+    background-color: #08CEF8;
+    border-color: #3660EC;
+    color: #3660EC;
+    --bs-btn-active-border-color: #3660EC;
+    --bs-btn-active-color: #3660EC;
 }
 
 
@@ -1401,6 +1446,11 @@ canvas {
     margin: auto;
   } */
 
+  .playButtonText h5 {
+   font-size: 1.2em;
+  }
+
+
   canvas {
    width: 100%;
    max-width: max-content;
@@ -1441,7 +1491,7 @@ canvas {
 
 .crawl {
   position: relative;
-  margin-top:200px;
+  margin-top:-30px;
    /* top: 9999px;  */
   transform-origin: 50% 100%;
   animation: crawl 190s forwards;
@@ -1502,7 +1552,7 @@ canvas {
 
 .crawl {
   position: relative;
-  margin-top:200px;
+  margin-top:100px;
    /* top: 9999px;  */
   transform-origin: 50% 100%;
   animation: crawl 190s forwards;
@@ -1533,6 +1583,7 @@ canvas {
     margin: auto;
   } */
 
+   
   canvas {
    width: 100%;
    max-width: max-content;
@@ -1572,7 +1623,7 @@ canvas {
 
 .crawl {
   position: relative;
-  margin-top:200px;
+  margin-top:-50px;
    /* top: 9999px;  */
   transform-origin: 50% 100%;
   animation: crawl 190s forwards;
@@ -1609,18 +1660,6 @@ canvas {
     margin-bottom: 120px;
 }
 
-.blur {
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1040;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: end;
-}
 
   .wake-qassandra {
     bottom: 420px;
@@ -1641,6 +1680,10 @@ canvas {
     margin: auto;
   }
 
+  .playButtonText h5 {
+    font-size: 1em;
+  }
+
   .wake-qassandra {
     bottom: 350px;
     display: none;
@@ -1648,8 +1691,26 @@ canvas {
 
   .top {
    position: absolute;
-   bottom: 300px;
+   bottom: 410px;
  }
+
+  /* .specialisation-top {
+   position: absolute;
+   bottom: 410px;
+ } */
+
+ .blur {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
 
   /* .menu {
    -webkit-backdrop-filter: blur(5px);
@@ -1729,7 +1790,7 @@ canvas {
 
 .crawl {
   position: relative;
-  margin-top:200px;
+  margin-top:300px; /* was 200px before */
    /* top: 9999px;  */
   transform-origin: 50% 100%;
   animation: crawl 190s forwards;
@@ -1760,9 +1821,13 @@ canvas {
     margin: auto;
   }
 
-  .playButtonText > h4, h5 {
-   font-size: 0.9em;
+  .playButtonText > h3 {
+   font-size: 1.2em;
   }
+
+  .playButtonText h5 {
+    font-size: 0.9em;
+}
 
   .top {
   position: absolute;
@@ -1875,7 +1940,7 @@ canvas {
 
 .crawl {
   position: relative;
-  margin-top:200px;
+  margin-top:150px;
    /* top: 9999px;  */
   transform-origin: 50% 100%;
   animation: crawl 190s forwards; /*try 270s*/

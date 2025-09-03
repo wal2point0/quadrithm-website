@@ -1,13 +1,15 @@
-    // Toggle play/pause button
+    // Toggle play/pause buttons
     var audio = document.getElementById("myAudio");
     var walThreePoint0Button = document.getElementById("walThreePoint0Intro");
     var brandonButton = document.getElementById("brandonIntro");
     var emanButton = document.getElementById("emanIntro"); 
 
+    // Button animation variables
     var playButtonOneText = document.getElementById("playButtonOne");
     var playButtonTwoText = document.getElementById("playButtonTwo");
     var playButtonThreeText = document.getElementById("playButtonThree"); 
 
+    // Media query variables
     var mediaQuery = window.matchMedia("(max-width: 768px)"); 
     var checkTablet = window.matchMedia('(min-width: 769px) and (max-width: 992px)');
     var checkDesktop = window.matchMedia('(min-width: 993px) and (max-width: 1200px)');
@@ -42,6 +44,7 @@
     // window.addEventListener("load", showAudioButtons, false);
     // window.addEventListener("load", checkScreen, false);
     mediaQuery.addEventListener("change", mobileMudioButtons(mediaQuery));
+    // walThreePoint0Button.addEventListener("click", playAudio);
     //  checkMobile.addEventListener("change", mobileMudioButtons(checkMobile));
     //  checkTablet.addEventListener("change", mobileMudioButtons(checkTablet));
     //  checkDesktop.addEventListener("change", mobileMudioButtons(checkDesktop));
@@ -50,24 +53,44 @@
 
 
    
-    // Toggle play/pause button works
-    var playButton = document.querySelector('.play-button');
-    let isPlaying = false;
+    // Toggle play/pause button function
+    playAudio();
+    function playAudio (){
+        var playButton = document.getElementById('walThreePoint0Intro');
+        let isPlaying = false;
 
-    playButton.addEventListener('click', () => {
-        isPlaying = !isPlaying;
-        audio.paused = !audio.paused;
+        playButton.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            audio.paused = !audio.paused;
 
-        playButton.innerHTML = isPlaying ? '<i class="bi bi-pause-fill fs-1"></i>' : '<i class="bi bi-play-fill fs-1"></i>';
-        audio.paused ? audio.play() : audio.pause();
+            playButton.innerHTML = isPlaying ? '<i class="bi bi-pause-fill fs-1"></i>' : '<i class="bi bi-play-fill fs-1"></i>';
+            audio.paused ? audio.play() : audio.pause();
 
-        audio.addEventListener("ended", function(){
-            audio.currentTime = 0;
-            console.log("ended");
-            playButton.innerHTML = '<i class="bi bi-play-fill fs-1"></i>';
-
+            audio.addEventListener("ended", function(){
+                audio.currentTime = 0;
+                console.log("ended");
+                playButton.innerHTML = '<i class="bi bi-play-fill fs-1"></i>';
+                isPlaying = false;
+            });
         });
-    });
+    }
+
+// function playAudio (){
+//     let isPlaying = false; 
+    
+//      isPlaying = !isPlaying;
+//      audio.paused = !audio.paused;
+
+//         walThreePoint0Button.innerHTML = isPlaying ? '<i class="bi bi-pause-fill fs-1"></i>' : '<i class="bi bi-play-fill fs-1"></i>';
+//         audio.paused ? audio.play() : audio.pause();
+
+//         audio.addEventListener("ended", function(){
+//             audio.currentTime = 0;
+//             console.log("ended");
+//             walThreePoint0Button.innerHTML = '<i class="bi bi-play-fill fs-1"></i>';
+//             isPlaying = false;
+//         });
+// }    
 
 // var audio = document.getElementById("myAudio"); 
 // var playButton = document.querySelector('.play-button');
