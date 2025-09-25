@@ -36,9 +36,29 @@ var aboutUsButtonsTimeout;
 
 
 findOutMore.addEventListener("mouseover", playAboutQuadrithmAudio);
+findOutMore.addEventListener("mouseout", function (){
+	aboutQuadrithmAudio.pause();
+	aboutQuadrithmAudio.currentTime = 0;
+});
+
 quadrithmSpecilisations.addEventListener("mouseover", playSpecialisationAudio);
+quadrithmSpecilisations.addEventListener("mouseout", function(){
+	specialisationAudio.pause();
+	specialisationAudio.currentTime = 0;
+});
+
 classifiedMissions.addEventListener("mouseover", playClassifiedAudio);
+classifiedMissions.addEventListener("mouseout", function(){
+	classifiedAudio.pause();
+	classifiedAudio.currentTime=0;
+});
+
 assignMission.addEventListener("mouseover", playAssignMissionAudio);
+assignMission.addEventListener("mouseout", function(){
+	assignMissionAudio.pause();
+	assignMissionAudio.currentTime=0;
+});
+
 
 window.addEventListener("load", showWakeButton, false);
 // window.addEventListener("load", showAboutUsButtons, false);
