@@ -1740,7 +1740,7 @@ canvas {
   canvas {
     width: 100%;
     max-width: max-content;
-    margin-bottom: 50px;
+    margin-bottom: -30px;
   }
 
   /* canvas {
@@ -1788,6 +1788,8 @@ canvas {
    height: 120px;
    position: absolute;
    left: 5px;
+  z-index: 10px;
+
  }
 
  .star-wars {
@@ -1807,7 +1809,7 @@ canvas {
 
 .crawl {
   position: relative;
-  margin-top:300px; /* was 200px before */
+  margin-top:300px; /* was 200px before */ /* change this to show more text */
    /* top: 9999px;  */
   transform-origin: 50% 100%;
   animation: crawl 190s forwards;
@@ -1827,6 +1829,53 @@ canvas {
 .crawl > .title p {
     font-size: 120%;
 }
+
+}
+
+/* ----------- iPhone 15 and 16 PLUS ----------- */
+
+@media screen 
+  and (min-width: 430px) 
+  and (max-height: 932px)  { 
+
+    canvas {
+    width: 100%;
+    max-width: max-content;
+    margin-bottom: 30px;
+  }
+
+  .menu {
+    display: flex;
+    margin-bottom: 100px;
+  }
+
+  .skip {
+    padding-bottom: 50px;
+  }
+
+}
+
+
+/* ----------- iPhone 15 and 16 PRO ----------- */
+
+@media screen 
+  and (min-width: 393px) 
+  and (max-height: 852px)  { 
+
+    canvas {
+    width: 100%;
+    max-width: max-content;
+    margin-bottom: 10px;
+  }
+
+  .menu {
+    display: flex;
+    margin-bottom: 100px;
+  }
+
+  .skip {
+    padding-bottom: 50px;
+  }
 
 }
 
