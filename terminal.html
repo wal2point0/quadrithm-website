@@ -18,7 +18,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="index-test.css" rel="stylesheet">
+    <link href="test.css" rel="stylesheet">
   </head>
 
   <body class="d-flex h-100 text-center" id="mission-brief">
@@ -37,120 +37,117 @@
                 <h1>SEND <em>MISSION</em> BRIEF</h1> 
               </div> -->
           </header>
+      
+    <!-- <div class="terminal mw-100">
+      <div class="window-title">user@system:~$ mission.exe</div>
+      
+        <div id="output"></div>
+        <div class="cursor"></div>
+    </div> -->
 
-          <!-- QASSANDRA AUDIO -->
-              <!-- <audio id="myAudio" autoplay muted></audio> you may need to change this when the website is live on the server-->
-              <audio id="myAudio">
-                <source src="./audio/qassandra_intro.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-          
-              <audio id="aboutQuadrithmAudio">
-                <source src="./audio/find_out_more.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-          
-              <audio id="specialisationAudio">
-                <source src="./audio/specialisations.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-          
-              <audio id="classifiedAudio">
-                <source src="./audio/classified.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-          
-              <audio id="assignMissionAudio">
-                <source src="./audio/signpost.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
+    <div class="terminal my-auto mx-auto" id="terminalContainer">
+        <div class="window-title p-2">user@system:~$ mission.exe</div>
 
-        <!-- Recording Controls -->
-     <div class="container my-auto">
-      <div class="row">
-        <div class="bg-dark col-md-6 recorder rounded border border-success mx-auto p-5">
-          <h2 class="font-bold text-center mb-4 text-gray-800">Send Mission Brief</h2>
-          <div class="recorder">
-            <div class="flex justify-center">
-                <button
-                  id="startRecord"
-                  class="btn btn-primary text-white font-bold py-2 px-4 rounded-circle flex items-center"
-                >
-                  <i class="bi bi-mic fs-2 mr-2"></i> rec
-                </button>
-            </div>
+        <div id="output" class="text-start p-3"></div>
+        <div class="glitch-overlay" id="glitchOverlay"></div>
+        <!-- <div class="terminal-output" id="terminalOutput"></div> -->
+         <!-- Button trigger modal -->
+        <button type="button" class="btn btn-outline-secondary ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">assign mission</button>
+    </div>
 
-              <!-- <p id="timestamp" class="text-center text-sm text-gray-600"></p> -->
-              <p id="recordingTime" class="text-center text-xl font-semibold text-gray-800"></p>
-
-              <div class="mt-6 flex justify-center">
-                <!-- <h5 class="text-lg font-semibold mb-2 text-gray-700">Recorded Audio Preview</h5> -->
-                <audio id="audioPlayback" controls class="mw-100"></audio>
-              </div>
-
-            <div class="flex justify-center">
-               <button
-                  id="stopRecord"
-                  class="btn btn-danger text-white font-bold py-2 px-4 rounded-full flex items-center"
-                  disabled
-                >
-                  <i class="fas fa-stop-circle mr-2"></i> Stop Recording
-                </button>
-            </div>
-
-            <!-- Submission Form -->
-           <form id="recordingForm" class="space-y-4" novalidate>
-              <div class="row flex justify-content-center">
-                  <div class="col-md-6">
-                    <label for="nameInput" class="block form-label text-sm font-medium text-gray-700 mb-1">Enter your name</label>
-                    <input 
-                      type="text" 
-                      id="nameInput" 
-                      name="name"
-                      pattern="[A-Za-z\s]+" 
-                      title="Please enter letters only" 
-                      class="form-control"
-                      required
+    <!-- Modal -->
+    <div class="modal fade my-auto mx-auto" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header d-flex justify-content-between">
+            <h5 class="modal-title" id="exampleModalLabel">Send <em>MISSION</em> Brief</h5>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+          </div>
+          <div class="modal-body">
+             <div class="recorder">
+                <div class="flex justify-center">
+                    <button
+                      id="startRecord"
+                      class="btn btn-primary font-bold py-2 px-4 rounded-circle flex items-center"
                     >
-                    <div class="text-red-500 text-xs mt-1 hidden" id="nameError">Please enter a valid name (letters only)</div>
+                      <i class="bi bi-mic fs-2 mr-2"></i> rec
+                    </button>
+                </div>
+
+                  <!-- <p id="timestamp" class="text-center text-sm text-gray-600"></p> -->
+                  <p id="recordingTime" class="text-center text-xl font-semibold pt-2"></p>
+
+                  <div class="mt-6 flex justify-center">
+                    <!-- <h5 class="text-lg font-semibold mb-2 text-gray-700">Recorded Audio Preview</h5> -->
+                    <audio id="audioPlayback" controls class="mw-100"></audio>
                   </div>
 
-                  <div class="col-md-6">
-                    <label for="emailInput" class="block form-label text-sm font-medium text-gray-700 mb-1">
-                      Enter your email
-                    </label>
-                    <input 
-                      type="email" 
-                      id="emailInput" 
-                      name="email"
-                      class="form-control"
-                      required
-                      oninput="validateEmail(this)"
+                <div class="flex justify-center py-2">
+                  <button
+                      id="stopRecord"
+                      class="btn btn-danger text-white font-bold py-2 px-4 rounded-full flex items-center"
+                      disabled
                     >
-                    <div class="text-red-500 text-xs mt-1 hidden" id="emailError">
-                      Please enter a valid email address
-                    </div>
-                  </div>  
-               </div>   
-            </form>
-            
+                      <i class="fas fa-stop-circle mr-2"></i> Stop Recording
+                    </button>
+                </div>
+
+                <!-- Submission Form -->
+              <form id="recordingForm" class="space-y-4" novalidate>
+                  <div class="row flex justify-content-center">
+                      <div class="col-md-6">
+                        <label for="nameInput" class="block form-label text-sm font-medium text-gray-700 mb-1">Enter your name</label>
+                        <input 
+                          type="text" 
+                          id="nameInput" 
+                          name="name"
+                          pattern="[A-Za-z\s]+" 
+                          title="Please enter letters only" 
+                          class="form-control"
+                          required
+                        >
+                        <div class="text-red-500 text-xs mt-1 hidden" id="nameError">Please enter a valid name (letters only)</div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <label for="emailInput" class="block form-label text-sm font-medium text-gray-700 mb-1">
+                          Enter your email
+                        </label>
+                        <input 
+                          type="email" 
+                          id="emailInput" 
+                          name="email"
+                          class="form-control"
+                          required
+                          oninput="validateEmail(this)"
+                        >
+                        <div class="text-red-500 text-xs mt-1 hidden" id="emailError">
+                          Please enter a valid email address
+                        </div>
+                      </div>  
+                  </div>   
+                </form>
+                
+              </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+              <div class="">
+                    <button
+                      type="submit"
+                      id="submitRecording"
+                      class="btn btn-success text-white font-bold py-2 px-4 rounded-full flex items-center justify-center"
+                    >
+                      <i class="fas fa-paper-plane mr-2"></i> Assign Mission
+                    </button>
+                </div>
           </div>
         </div>
       </div>
-      
+    </div>
 
-         <div class="mt-4">
-              <button
-                type="submit"
-                id="submitRecording"
-                class="btn btn-success hidden text-white font-bold py-2 px-4 rounded-full flex items-center justify-center"
-              >
-                <i class="fas fa-paper-plane mr-2"></i> Assign Mission
-              </button>
-          </div>
-      </div>
 
-        <!-- MENU -->
+      <!-- MENU -->
         <div id="menuBlur">
           <div class="row menu">
             <!-- Button 1  -->
@@ -200,8 +197,16 @@
         
           </div>
         </div>
+          
+
+
         
-      </div>
+        
+             
+        
+        
+        </div>
+        
       
       <script src="qassandra.js"></script>
       <script src="audio-recorder.js" defer></script>

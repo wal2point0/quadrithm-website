@@ -18,6 +18,21 @@ var findOutMore = document.getElementById("buttonOne");
 var quadrithmSpecilisations = document.getElementById("buttonTwo");
 var classifiedMissions = document.getElementById("buttonThree");
 var assignMission = document.getElementById("buttonFour");
+const glitchOverlay = document.getElementById('glitchOverlay');
+
+
+const outputDiv = document.getElementById('output');
+const cursor = document.querySelector('.cursor');
+const lines = [
+    "Connecting to a secure server...",
+    "Encrypting phone line...",
+    "Access granted. Welcome, visitor...",
+    "Use the button below to assign a mission to the team...",
+    "You have the license to spill..."
+];
+let lineIndex = 0;
+let charIndex = 0;
+let typingSpeed = 50; // milliseconds
 
 
 var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
@@ -64,7 +79,11 @@ window.addEventListener("load", showWakeButton, false);
 // window.addEventListener("load", showAboutUsButtons, false);
 window.addEventListener("load", disappearSkipButton, false);
 // mediaQuery.addEventListener("change", menuBlur);
-
+// window.addEventListener("load", type, false);
+document.addEventListener('DOMContentLoaded', () => {
+    typeLine();
+	triggerGlitch(800, 'random');
+});
 
 
 // menuButton.addEventListener("click", toggleMenu);
@@ -75,7 +94,6 @@ wakeupButton.addEventListener("click", showQassandra);
 wakeupButton.addEventListener("click", showElements, false);
 wakeupButton.addEventListener("click", removeSkipButton);
 skipIntro.addEventListener("click", startStory);
-
 
 
 
@@ -211,6 +229,53 @@ function playAssignMissionAudio(){
 function playAudio(){
 	audio.play();
 }
+
+function typeLine() {
+    if (lineIndex < lines.length) {
+        if (charIndex < lines[lineIndex].length) {
+            outputDiv.textContent += lines[lineIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeLine, typingSpeed);
+        } else {
+            outputDiv.textContent += '\n'; // Add a new line after each message
+            lineIndex++;
+            charIndex = 0;
+            setTimeout(typeLine, 1000); // Pause before next line
+        }
+    } else {
+        cursor.style.display = 'none';
+    }
+}
+
+ /**
+ * Triggers a visual glitch effect on the terminal.
+ */
+
+function triggerGlitch(duration = 500, type = 'normal') {
+	terminalContainer.classList.add('glitch-active');
+	// playStatic(); // Play static sound during glitch
+
+	if (type === 'random') {
+		const types = ['normal', 'scanline', 'rgb'];
+		type = types[Math.floor(Math.random() * types.length)];
+	}
+
+	if (type === 'scanline') {
+		terminalContainer.classList.add('glitch-scanline');
+	} else if (type === 'rgb') {
+		terminalContainer.classList.add('glitch-rgb-split');
+	}
+
+	setTimeout(() => {
+		terminalContainer.classList.remove('glitch-active');
+		terminalContainer.classList.remove('glitch-scanline');
+		terminalContainer.classList.remove('glitch-rgb-split');
+	}, duration);
+}
+
+
+
+
 
 function canvasApp() {
 	
