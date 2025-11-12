@@ -21,6 +21,10 @@
             --body-bg-color: #0d1117;
             --ui-green: #27cc14;
             --ui-green-dim: rgba(39, 204, 20, 0.33);
+            --accent-color: #008f11; /* Darker Green */
+            --text-color: #00ff41; /* Bright Green */
+
+
 
         }
  
@@ -212,10 +216,10 @@
  /*
   * Menu
   */
- .menu {
+ /* .menu {
    display: flex;
    margin-bottom: 50px;
- }
+ } */
  
  /*
   * Mobile Devices
@@ -300,6 +304,80 @@
    width: 100px;
 }
 
+.btn-success {
+      /* --bg:
+          radial-gradient(
+              40% 50% at center 100%,
+              hsl(330 0% 72% / 0.05),
+              transparent
+          ),
+          radial-gradient(
+              80% 100% at center 120%,
+              hsl(320 0% 70% / 0.1),
+              transparent
+          ),
+          hsl(320 86.4% 56.9%);
+   background: var(--bg);
+    --bs-btn-color: #C8FF00; 
+    --bs-btn-hover-bg: #C8FF00;
+    --bs-btn-hover-color: #F032B1;
+    --bs-btn-active-bg: #dc3545;
+    font-family: 'Switzer-Regular', Helvetica, Arial, sans-serif; */
+   background: var(--ui-green-dim);
+   --bs-btn-border-color: #C8FF00;
+   --bs-btn-hover-border-color: #C8FF00;
+   --bs-btn-color: #C8FF00; 
+   --bs-btn-hover-color: #45454A;
+   --bs-btn-hover-bg: #C8FF00;
+   --bs-btn-active-bg: var(--ui-green);
+   --bs-btn-active-color: #45454A;
+   --bs-btn-active-border-color: var(--ui-green);
+   
+
+}
+
+.btn-secondary {
+  --bs-btn-color: #C8FF00; 
+  /* --bs-btn-border-color: #C8FF00; */
+  --bs-btn-hover-color: #C8FF00;
+  --bs-btn-hover-border-color: #C8FF00;
+  --bs-btn-active-border-color: #C8FF00;
+  --bs-btn-active-color: #F032B1;
+
+}
+
+/* .formErrors {
+   color: #F032B1;
+} */
+
+.form-control {
+   color: #C8FF00;
+  background-color: transparent;
+  border: var(--bs-border-width) solid #C8FF00;
+}
+
+input[type=text]:focus {
+  background-color: var(--ui-green-dim);
+  color: #C8FF00;
+  border: 2px solid #C8FF00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+input[type=email]:focus {
+  background-color: var(--ui-green-dim);
+  color: #C8FF00;
+  border: 2px solid #C8FF00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+}
+
+
+/* .btn-danger {
+   --bs-btn-bg: #F032B1;
+   --bs-btn-border-color: #F032B1;
+   --bs-btn-disabled-bg: #F032B1;
+   --bs-btn-disabled-border-color: #F032B1;
+
+} */
 
   /*
   * CIRCULAR MENU BUTTONS
@@ -1235,6 +1313,14 @@
   font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
 }
 
+.text-rec {
+  translate: 2% -6%;
+  letter-spacing: 0.01ch;
+  color: #45454A;
+  font-weight: bold;
+  font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
+}
+
 
  /*
   * INTRODUCTION PAGE
@@ -1490,12 +1576,23 @@ canvas {
     transform: rotateX(25deg) translateZ(-2500px);
   }
 }
-
+/* 
+#assignMission {
+  display:none;
+} */
 
 
   /*
   * MEDIA QUERIES
  */
+
+  /* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { 
+  .modal.show .modal-dialog {   
+    margin-top: 4.375rem;
+}
+
+ }
 
  @media (max-width: 1200px) { 
   /* .myrow {
@@ -1506,6 +1603,7 @@ canvas {
   .playButtonText h5 {
    font-size: 1.2em;
   }
+
 
 
   canvas {
@@ -1700,9 +1798,16 @@ canvas {
 .crawl > .title p {
     font-size: 145%;
 }
+
+.centre-modal {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - var(--bs-modal-margin) * 2);
+}
   
 
 }
+
 
   /* Small devices (landscape phones, less than 768px) */
  @media (max-width: 768px) { 
@@ -1751,6 +1856,20 @@ canvas {
    bottom: 410px;
  }
 
+ .top-contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: -100px;
+}
+
+.centre-modal {
+    display: flex;
+    align-items: flex-start;
+}
+
+
   /* .specialisation-top {
    position: absolute;
    bottom: 410px;
@@ -1783,6 +1902,12 @@ canvas {
     margin-bottom: -30px;
   }
 
+   .menu {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  
   /* canvas {
     width: 100%;
     max-width: max-content;
@@ -1897,7 +2022,7 @@ canvas {
 
 
 /* ----------- iPhone 15 and 16 PRO ----------- */
-
+ 
 @media screen 
   and (min-width: 393px) 
   and (max-height: 852px)  { 
@@ -1940,6 +2065,14 @@ canvas {
   bottom: 300px;
 }
 
+.top-contact {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    bottom: -100px;
+}
+
 .wake-qassandra {
   bottom: 300px;
   display: none;
@@ -1956,6 +2089,12 @@ canvas {
   max-width: max-content;
   margin-bottom: 30px;
 }
+
+ /* .menu {
+    display: flex;
+    margin-bottom: 40px;
+  } */
+   
 
 /* .aboutus-buttons { 
   margin-bottom: 0px;

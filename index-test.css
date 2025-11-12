@@ -1213,6 +1213,16 @@
   font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
 }
 
+.text-rec {
+  translate: 2% -6%;
+  letter-spacing: 0.01ch;
+  color: #45454A;
+  /* font-weight: bold; */
+  font-family: 'Switzer-Semibold', Helvetica, Arial, sans-serif;
+}
+
+
+
 
  /*
   * INTRODUCTION PAGE

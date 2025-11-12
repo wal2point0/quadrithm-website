@@ -45,6 +45,14 @@ collapseElementList[2].addEventListener('hide.bs.collapse', function () {
 			menuBackground.setAttribute('class', '');
 });
 
+window.addEventListener('hide.bs.modal', event => {
+    event.target.inert = true
+})
+
+window.addEventListener('show.bs.modal', event => {
+    event.target.inert = false
+})
+
 
 var wakeTimeout;
 var aboutUsButtonsTimeout;
