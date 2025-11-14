@@ -19,6 +19,7 @@ var quadrithmSpecilisations = document.getElementById("buttonTwo");
 var classifiedMissions = document.getElementById("buttonThree");
 var assignMission = document.getElementById("buttonFour");
 const glitchOverlay = document.getElementById('glitchOverlay');
+var assignMissionButton = document.getElementById('assignMission');
 
 
 const outputDiv = document.getElementById('output');
@@ -91,6 +92,7 @@ window.addEventListener("load", disappearSkipButton, false);
 document.addEventListener('DOMContentLoaded', () => {
     typeLine();
 	triggerGlitch(800, 'random');
+	showAssignButton();
 });
 
 
@@ -254,6 +256,20 @@ function typeLine() {
         cursor.style.display = 'none';
     }
 }
+
+function showAssignButton (){
+
+	wakeTimeout = setTimeout(function(){
+		assignMissionButton.style.display = 'block';
+		assignMissionButton.classList.add('animate__animated', 'animate__fadeIn');
+	},10000);	
+
+	//   wakeupButton.onanimationend = () => {
+	// 	wakeupButton.classList.remove('animate__animated', 'animate__zoomIn');
+	// 	wakeupButton.classList.add('animate__animated', 'animate__bounce');
+	//   };
+}
+
 
  /**
  * Triggers a visual glitch effect on the terminal.
