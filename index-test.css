@@ -320,7 +320,6 @@
   --bs-btn-hover-border-color: #C8FF00;
   --bs-btn-active-border-color: #C8FF00;
   --bs-btn-active-color: #F032B1;
-
 }
 
 /* FORM INPUTS IN MODAL */
@@ -1686,6 +1685,7 @@ canvas {
     --bs-btn-active-border-color: var(--ui-green);
   }
 
+
  /* MODAL STYLING */
  .modal {
   --bs-modal-bg: #45454A;
@@ -1704,7 +1704,14 @@ canvas {
   font-family: 'Beer-Goggles', 'Switzer-Semibold';
 }
 
-
+/*POPOVER STYLING */
+.popover {
+  --bs-popover-bg:#45454A;
+  --bs-popover-header-bg: #45454A;
+  --bs-popover-header-color: rgb(200, 255, 0);
+  --bs-popover-body-color:  rgb(200, 255, 0);
+  --bs-popover-border-color: rgb(200, 255, 0);
+}
 
  /*
   * MEDIA QUERIES
@@ -2334,10 +2341,14 @@ canvas {
     font-size: 120%;
 }
 
-     .window-title {
+ .window-title {
        margin-bottom: 0px;
        /* font-size: 1.2em; */
     } 
+
+  .modal-title span{
+    display: none;
+  }
 
 }
 
