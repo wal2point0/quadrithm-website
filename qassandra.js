@@ -3,6 +3,7 @@ var aboutQuadrithmAudio = document.getElementById("aboutQuadrithmAudio");
 var specialisationAudio = document.getElementById("specialisationAudio"); 
 var classifiedAudio = document.getElementById("classifiedAudio"); 
 var assignMissionAudio = document.getElementById("assignMissionAudio"); 
+var accessDeniedAudio = document.getElementById("accessDeniedAudio"); 
 
 
 var openingCredits = document.getElementById("fly-in");
@@ -20,6 +21,7 @@ var classifiedMissions = document.getElementById("buttonThree");
 var assignMission = document.getElementById("buttonFour");
 const glitchOverlay = document.getElementById('glitchOverlay');
 var assignMissionButton = document.getElementById('assignMission');
+var accessDeniedButton = document.getElementById("missionsFolder"); 
 
 
 const outputDiv = document.getElementById('output');
@@ -102,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // menuButton.addEventListener("click", toggleMenu);
+accessDeniedButton.addEventListener("click", playAccessDeniedAudio); 
 wakeupButton.addEventListener("click", hideOpeningCredits);
 wakeupButton.addEventListener("click", removeWakeQassandraButton);
 wakeupButton.addEventListener("click", playAudio); 
@@ -238,6 +241,10 @@ function playClassifiedAudio(){
 
 function playAssignMissionAudio(){
 	assignMissionAudio.play();
+}
+
+function playAccessDeniedAudio(){
+	accessDeniedAudio.play();
 }
 
 

@@ -1731,6 +1731,8 @@ label {
   position: relative;
   width: 150px;
   height: calc(150px / 100 * 75);
+  font-family: 'Switzer-bold', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
   perspective: 750px;
   color: #111;
   display: flex;
@@ -1933,7 +1935,66 @@ label {
   }
 
 
+
  /* MODAL STYLING */
+
+   .access-denied .modal {
+      --bs-modal-bg: #E84500;
+        color: #fff;
+      --bs-modal-border-color: #842029;
+      --bs-modal-header-border-color: #842029;
+      --bs-modal-footer-border-color:  #842029;
+  } 
+
+  .modal-header h5 {
+      font-family: 'Switzer-bold', Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+  }
+
+   .modal-body {
+    font-family: 'Manrope-Regular', sans-serif;
+  }
+
+  .modal-footer button {
+    font-family: 'Manrope-Regular', sans-serif;
+    word-spacing: 0.3em;
+  }
+
+
+  .btn-warning a {
+     color: #842029;
+     text-decoration: none;
+  }
+
+  .btn-warning a:active {
+    color: #ffc107;
+  }
+
+  .btn-warning {
+      background: #ffc107;
+      --bs-btn-color: #842029;
+      /* --bs-btn-border-color: #842029; */
+      --bs-btn-hover-border-color: #842029;
+      --bs-btn-hover-color: #842029;
+      --bs-btn-active-bg: #842029;
+      --bs-btn-active-color: #ffc107;
+      /* --bs-btn-hover-bg: #842029; */
+  }
+
+
+    .access-denied .fade.show {
+     animation: flash 0.5s infinite alternate;
+    }
+
+    @keyframes flash {
+        from {
+          background-color: rgba(255,0,0,.5); 
+        }
+        to { 
+          background-color: rgba(139,0,0,.5);
+         }
+    }
+
  .modal {
   --bs-modal-bg: #45454A;
   --bs-modal-border-color:  rgb(200, 255, 0);
@@ -1949,6 +2010,7 @@ label {
   .modal-header em {
   font-style: normal;
   font-family: 'Beer-Goggles', 'Switzer-Semibold';
+  padding-right: 3px;
 }
 
 /*POPOVER STYLING */
@@ -2051,6 +2113,12 @@ label {
 
 .folder {
 margin-left: 187px;
+}
+
+.centre-modal {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - var(--bs-modal-margin) * 2);
 }
 
 }
@@ -2187,11 +2255,11 @@ margin-left: 187px;
     font-size: 145%;
 }
 
-.centre-modal {
+/* .centre-modal {
     display: flex;
     align-items: center;
     min-height: calc(100% - var(--bs-modal-margin) * 2);
-}
+} */
   
 }
 
@@ -2499,6 +2567,7 @@ canvas {
   margin-left: 5px;
   width: 100px;
   height: calc(100px / 100 * 75);
+  font-size: 0.7em;
 }
 
 .impossible {
