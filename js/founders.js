@@ -1,129 +1,105 @@
-    // Toggle play/pause buttons
-    var audio = document.getElementById("myAudio");
-    var walThreePoint0Button = document.getElementById("walThreePoint0Intro");
-    var brandonButton = document.getElementById("brandonIntro");
-    var emanButton = document.getElementById("emanIntro"); 
+// Specialisation Audio
+var audio = document.getElementById("myAudio");
 
-    // Button animation variables
-    var playButtonOneText = document.getElementById("playButtonOne");
-    var playButtonTwoText = document.getElementById("playButtonTwo");
-    var playButtonThreeText = document.getElementById("playButtonThree"); 
+// Toggle play/pause buttons
+var walThreePoint0Button = document.getElementById("walThreePoint0Intro");
+var brandonButton = document.getElementById("brandonIntro");
+var emanButton = document.getElementById("emanIntro"); 
 
-    // Media query variables
-    var mediaQuery = window.matchMedia("(max-width: 768px)"); 
-    var checkTablet = window.matchMedia('(min-width: 769px) and (max-width: 992px)');
-    var checkDesktop = window.matchMedia('(min-width: 993px) and (max-width: 1200px)');
+// the text under the buttons variables
+var playButtonOneText = document.getElementById("playButtonOne");
+var playButtonTwoText = document.getElementById("playButtonTwo");
+var playButtonThreeText = document.getElementById("playButtonThree"); 
+
+// MENU BUTTONS AUDIO
+var aboutQuadrithmAudio = document.getElementById("aboutQuadrithmAudio"); 
+var specialisationAudio = document.getElementById("specialisationAudio"); 
+var classifiedAudio = document.getElementById("classifiedAudio"); 
+var assignMissionAudio = document.getElementById("assignMissionAudio"); 
+
+// VARIABLES FOR MENU BUTTONS
+var findOutMore = document.getElementById("buttonOne");
+var quadrithmSpecilisations = document.getElementById("buttonTwo");
+var classifiedMissions = document.getElementById("buttonThree");
+var assignMission = document.getElementById("buttonFour");
+
+// THIS VARIABLE WILL BE USED TO BLUR THE BACKGROUND ON MOBILE
+var menuBackground = document.getElementById("menuBlur"); 
+
+// VARIABLES FOR MENU BLUR WHICH WILL BE NEEDED IN ALL JS FILES
+var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
+collapseElementList[2].addEventListener('show.bs.collapse', function () {
+		// do something...
+			menuBackground.setAttribute('class', 'blur');
+});
+collapseElementList[2].addEventListener('hide.bs.collapse', function () {
+		// do something...
+			menuBackground.setAttribute('class', '');
+});
+
+// CODE FOR MENU BUTTONS NEEDED IN ALL JS FILES
+findOutMore.addEventListener("mouseover", playAboutQuadrithmAudio);
+findOutMore.addEventListener("mouseout", function (){
+	aboutQuadrithmAudio.pause();
+	aboutQuadrithmAudio.currentTime = 0;
+});
+
+quadrithmSpecilisations.addEventListener("mouseover", playSpecialisationAudio);
+quadrithmSpecilisations.addEventListener("mouseout", function(){
+	specialisationAudio.pause();
+	specialisationAudio.currentTime = 0;
+});
+
+classifiedMissions.addEventListener("mouseover", playClassifiedAudio);
+classifiedMissions.addEventListener("mouseout", function(){
+	classifiedAudio.pause();
+	classifiedAudio.currentTime=0;
+});
+
+assignMission.addEventListener("mouseover", playAssignMissionAudio);
+assignMission.addEventListener("mouseout", function(){
+	assignMissionAudio.pause();
+	assignMissionAudio.currentTime=0;
+});
 
 
-    
-//   window.matchMedia('screen and (max-width: 768px)').addEventListener("change", function (mql) {
-//     if (mql.matches){
-//          alert("Mobile View");
-//          showAudioButtonsMobile();
-//     }
-//   });
+// Media query variables
+var mediaQuery = window.matchMedia("(max-width: 768px)"); 
+var checkTablet = window.matchMedia('(min-width: 769px) and (max-width: 992px)');
+var checkDesktop = window.matchMedia('(min-width: 993px) and (max-width: 1200px)');
 
-//   window.matchMedia('(min-width: 769px) and (max-width: 992px)').addEventListener("change", function(mql){
-//     if (mql.matches){
-//          alert("Tablet View");
-//          showAudioButtonsTablet();
-//     }
-//   });
+// timeout variable used to set a time for when the audio buttons should appear;
+var audioTimeout;
 
-//   window.matchMedia('screen and (min-width: 1024px)').addEventListener("change", function(mql){
-//     if (mql.matches){
-//          alert("Desktop View");
-//          showAudioButtonsDesktop();
-//     }
-//   });
-
-    var audioButtons;
-
-    var audioTimeout;
-
-    // window.addEventListener("load", showAudioButtons, false);
-    // window.addEventListener("load", checkScreen, false);
-    mediaQuery.addEventListener("change", mobileMudioButtons(mediaQuery));
-    // walThreePoint0Button.addEventListener("click", playAudio);
-    //  checkMobile.addEventListener("change", mobileMudioButtons(checkMobile));
-    //  checkTablet.addEventListener("change", mobileMudioButtons(checkTablet));
-    //  checkDesktop.addEventListener("change", mobileMudioButtons(checkDesktop));
-
+// detects when the window size changes and calls the appropriate function
+mediaQuery.addEventListener("change", checkScreenSize(mediaQuery));
 
 
 
    
-    // Toggle play/pause button function
-    playAudio();
-    function playAudio (){
-        var playButton = document.getElementById('walThreePoint0Intro');
-        let isPlaying = false;
+// Toggle play/pause button function
+playAudio();
+function playAudio (){
+    var playButton = document.getElementById('walThreePoint0Intro');
+    let isPlaying = false;
 
-        playButton.addEventListener('click', () => {
-            isPlaying = !isPlaying;
-            audio.paused = !audio.paused;
+    playButton.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        audio.paused = !audio.paused;
 
-            playButton.innerHTML = isPlaying ? '<i class="bi bi-pause-fill fs-1"></i>' : '<i class="bi bi-play-fill fs-1"></i>';
-            audio.paused ? audio.play() : audio.pause();
+        playButton.innerHTML = isPlaying ? '<i class="bi bi-pause-fill fs-1"></i>' : '<i class="bi bi-play-fill fs-1"></i>';
+        audio.paused ? audio.play() : audio.pause();
 
-            audio.addEventListener("ended", function(){
-                audio.currentTime = 0;
-                console.log("ended");
-                playButton.innerHTML = '<i class="bi bi-play-fill fs-1"></i>';
-                isPlaying = false;
-            });
+        audio.addEventListener("ended", function(){
+            audio.currentTime = 0;
+            console.log("ended");
+            playButton.innerHTML = '<i class="bi bi-play-fill fs-1"></i>';
+            isPlaying = false;
         });
-    }
+    });
+}
 
-// function playAudio (){
-//     let isPlaying = false; 
-    
-//      isPlaying = !isPlaying;
-//      audio.paused = !audio.paused;
-
-//         walThreePoint0Button.innerHTML = isPlaying ? '<i class="bi bi-pause-fill fs-1"></i>' : '<i class="bi bi-play-fill fs-1"></i>';
-//         audio.paused ? audio.play() : audio.pause();
-
-//         audio.addEventListener("ended", function(){
-//             audio.currentTime = 0;
-//             console.log("ended");
-//             walThreePoint0Button.innerHTML = '<i class="bi bi-play-fill fs-1"></i>';
-//             isPlaying = false;
-//         });
-// }    
-
-// var audio = document.getElementById("myAudio"); 
-// var playButton = document.querySelector('.play-button');
-
-// waleButton.addEventListener("click", toggleMute);
-
-
-// //declare the unmute icon variable
-// var playIcon = '<i class="bi bi-play-fill fs-1"></i>';
-
-// //decalre the mute icon vabriable 
-// var pauseIcon = '<i class="bi bi-pause-fill fs-1"></i>';
-
-// let isPlaying = true;
-
-
-// function toggleMute(){
-//   //toggle the muted property of the audio element
-//   //  isPlaying = !isPlaying;
-//    audio.muted = !audio.muted;
-
-//       // if the video is muted, set the btn.innerHTML to unmuteIcon
-//     // otherwise, set it to the muteIcon
-//     if (audio.muted) {
-//       waleButton.innerHTML = playIcon;
-//       console.log("audio paused");
-//       audio.pause();
-//     } else {
-//       waleButton.innerHTML = pauseIcon;
-//       console.log("audio playing");
-//       audio.play();
-//     }
-// }
+// this function decides when the buttons should appear on larger desktops
 function showAudioButtonsDesktopLarge () {
 
     	audioTimeout = setTimeout(function(){
@@ -161,6 +137,7 @@ function showAudioButtonsDesktopLarge () {
 
 }
 
+// this function decides when the buttons should appear on desktop
 function showAudioButtonsDesktop () {
 
     	audioTimeout = setTimeout(function(){
@@ -198,6 +175,7 @@ function showAudioButtonsDesktop () {
 
 }
 
+// this function decides when the buttons should appear on tablets
 function showAudioButtonsTablet () {
 
     	audioTimeout = setTimeout(function(){
@@ -235,6 +213,7 @@ function showAudioButtonsTablet () {
 
 }
 
+// this function decides when the buttons should appear on mobile
 function showAudioButtonsMobile () {
 
     	audioTimeout = setTimeout(function(){
@@ -272,7 +251,8 @@ function showAudioButtonsMobile () {
 
 }
 
-function mobileMudioButtons (mediaQuery){
+// checks the screen size and calls the appropriate function;
+function checkScreenSize (mediaQuery){
 	if (mediaQuery.matches) { 
         alert("mobile view");
         showAudioButtonsMobile();
@@ -288,54 +268,24 @@ function mobileMudioButtons (mediaQuery){
     }
 }
 
-// function mobileMudioButtons (mediaQuery){
-  
-// 	if (mediaQuery.matches) { 
-//         console.log("mobile view");
-//         // showAudioButtonsMobile();
-// 	} else if (mediaQuery.matches) {
-//         // showAudioButtons();
-//         console.log("Tablet view");
 
-//     } else if (mediaQuery.matches) {
-//         console.log("Desktop view");
-//     }	
-// }
+// PLAYS THE ABOUT QUADRITHM AUDIO
+function playAboutQuadrithmAudio(){
+	aboutQuadrithmAudio.play();
+}
 
-// checkScreen();
+// PLAYS THE SPECIALISATION AUDIO
+function playSpecialisationAudio(){
+	specialisationAudio.play();
+}
 
-function checkScreen(){
+// PLAYS THE CLASSIFIED AUDIO FOR THE MISSIONS COMPLETED MENU BUTTON
+function playClassifiedAudio(){
+	classifiedAudio.play();
+}
 
-  const checkMobile = window.matchMedia('(max-width: 768px)');
-  const checkTablet = window.matchMedia('(min-width: 769px) and (max-width: 992px)');
-  const checkDesktop = window.matchMedia('screen and (min-width: 1024px)');
-
-  checkMobile.addEventListener("change",function(e){
-
-    if(e.matches) {
-
-        alert('MOBILE');
-        showAudioButtonsMobile();
-    }
-  });
-
-  checkTablet.addEventListener("change",function(e){
-
-    if(e.matches) {
-
-        alert('TABLET');
-        showAudioButtonsTablet();
-    }
-  });
-
-  checkDesktop.addEventListener("change",function(e){
-
-    if(e.matches) {
-
-        alert('DESKTOP');
-        showAudioButtonsDesktop();
-    }
-  });
-
+// PLAYS THE ASSIGN MISSION AUDIO FOR THE CONTACT PAGE
+function playAssignMissionAudio(){
+	assignMissionAudio.play();
 }
 

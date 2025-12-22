@@ -4,7 +4,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="Welcome to Quadrithm's universe, managed by our AI assistant Qassandra, who is here to help you. Come and say hello, don't be shy;">
     <title>Welcome</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -15,7 +15,7 @@
       <link rel="icon" type="image/png" href="favicon/calm-favicon-32x32.png" sizes="32x32" />
     
     <!-- Custom styles for this template -->
-    <link href="index-test.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
   </head>
 
   <body class="d-flex h-100 text-center">
@@ -33,11 +33,17 @@
 
 
   <div class="h-100 row align-items-center justify-content-center" id="fly-in">  
-    <div>Quad<em>rithm</em><span>an entity powered by technology, ingenuity, and insatiable curiosity</span></div>
+    <!-- <div>Quad<em>rithm</em><span>an entity powered by technology, ingenuity, and insatiable curiosity</span></div>
     <div id="2">Has Now<span>become more advanced due to the development of...</span></div>
     <div id="3">Qassandra<span>the entity’s AI system</span></div>
     <div>who manages everything<span>leaving the team to focus on what really matters...</span></div>
-    <div id="4">solving meaningful problems for their clients</div>
+    <div id="4">solving meaningful problems for their clients</div> -->
+    <div>This Winter<span>Something new emerges...</span></div>
+    <div id="2">Quad<em>rithm</em><span>an entity powered by technology, ingenuity, and insatiable curiosity</span></div>
+    <div id="3">Has Now<span>become more advanced due to the development of...</span></div>
+    <div id="4">Qassandra<span>the entity’s AI system</span></div>
+    <div>who manages everything<span>leaving the team to focus on what really matters...</span></div>
+    <div id="5">solving meaningful problems for their clients</div>
   </div>
 
 
@@ -48,7 +54,7 @@
     </div>
     
     <!-- <audio id="myAudio" autoplay muted></audio> you may need to change this when the website is live on the server-->
-    <audio id="myAudio">
+    <audio id="qassandraIntro">
       <source src="./audio/qassandra_intro.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
@@ -74,7 +80,151 @@
     </audio>
 
 
+  <div class="cookieBanner" id="cookieBanner">
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">C<em>OO</em>KIE <em>CO</em>NSENT</h4>
+        <p>Pssst...our website uses essential cookies to ensure it works properly and analytics to help us improve the site.
+           By continuing to use our website, you agree to our <a href="#" class="alert-link" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Privacy Policy</a></p>
+        
+       <button type="button" id="cookieConsentButton" class="btn btn-outline-success col-12 p-2">Accept</button>
+      </div>
+    </div>
 
+    <!-- Modal -->
+    <div class="cookie-policy-modal">
+      <div class="modal" id="exampleModalToggle" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header"> 
+              <h5 class="modal-title" id="exampleModalLabel"><em>Coo</em>kies & Privacy Policy</h5>
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+            </div>
+            <div class="modal-body text-start">
+
+              <p>
+                <strong>1. Information We Collect</strong><br />
+                When you use our website, we may collect the following:
+              </p>
+
+              <ul>
+                <li>Name (when submitted by you)</li>
+                <li>Email address (when submitted by you)</li>
+                <li>Voice recording (when submitted by you)</li>
+                <li>Basic analytics data (via third-party service — <strong>Section 4)</strong></li>
+              </ul>
+
+              <br />
+
+              <p>
+                <strong>2. How We Use Your Information</strong><br />
+                We use your information to:
+              </p>
+
+              <ul>
+                <li>Respond to your enquiry</li>
+                <li>Understand your request (including reviewing your voice recording)</li>
+                <li>Send newsletters if you choose to subscribe</li>
+              </ul>
+
+              <p><strong>Additional notes:</strong></p>
+
+              <ul>
+                <li>
+                  Your information is <strong>not sold</strong> or shared with third parties for
+                  marketing.
+                </li>
+                <li>
+                  Your voice recording is <strong>not used for AI training</strong> or automated
+                  processing.
+                </li>
+                <li>
+                  Analytics data is used <strong>only</strong> to understand website performance and
+                  improve the user experience.
+                </li>
+              </ul>
+
+              <br />
+
+              <p>
+                <strong>3. How Long We Keep Your Information</strong>
+              </p>
+
+              <ul>
+                <li><strong>Voice recordings:</strong> Automatically deleted after 7 days.</li>
+                <li>
+                  <strong>Name & email:</strong> Retained as long as needed to manage your enquiry or
+                  until you unsubscribe.
+                </li>
+                <li>
+                  <strong>Analytics cookies & data:</strong> Stored according to the retention period set
+                  by our analytics provider (<strong>Section 4</strong>).
+                </li>
+              </ul>
+
+              <br />
+
+              <p>
+                <strong>4. Cookies & Analytics</strong><br />
+                We use cookies to ensure the website works properly and to understand how visitors use our
+                site.
+              </p>
+
+              <p>
+                <strong>4.1 Essential Cookies</strong><br />
+                These cookies are required for the website to function. They do <strong>not</strong> store
+                personally identifiable information and cannot be switched off.
+              </p>
+
+              <p>
+                <strong>4.2 Analytics Cookies (Third-Party)</strong><br />
+                We use a trusted third-party analytics service to measure:
+              </p>
+
+              <ul>
+                <li>Number of visitors</li>
+                <li>Pages visited</li>
+                <li>Time spent on the website</li>
+                <li>Basic technical information (e.g., browser type, device type, and more)</li>
+              </ul>
+
+              <p>
+                This data helps us improve the website.It is <strong>not used for advertising</strong>, and the analytics provider does
+                <strong>not use this data to identify you personally</strong>.
+              </p>
+
+              <br />
+
+              <p>
+                <strong>5. Sharing Your Data</strong><br />
+                We <strong>do not</strong> sell your data.<br /><br />
+                Your data is only shared with service providers required to operate the website (e.g.,
+                hosting provider, email service provider, and analytics provider).<br /><br />
+                These providers are contractually obligated to keep your data secure and use it only for
+                the services we request.
+              </p>
+
+              <br />
+
+              <p>
+                <strong>6. Your Rights</strong><br />
+                Depending on your location, you may have the right to:
+              </p>
+
+              <ul>
+                <li>Access the personal data we hold</li>
+                <li>Request correction or deletion</li>
+                <li>Withdraw consent at any time</li>
+                <li>Opt out of newsletters</li>
+                <li>File a complaint with your local data authority</li>
+              </ul>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   
     <div id="menuBlur">
@@ -152,7 +302,7 @@
 
   
 </div>
-      <script src="qassandra.js"></script>
+      <script src="./js/qassandra.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
    </body>
 </html>

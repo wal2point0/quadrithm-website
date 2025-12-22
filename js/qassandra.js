@@ -1,43 +1,32 @@
-var audio = document.getElementById("myAudio"); 
+// MENU BUTTONS AUDIO
+var qassandraIntro = document.getElementById("qassandraIntro"); 
 var aboutQuadrithmAudio = document.getElementById("aboutQuadrithmAudio"); 
 var specialisationAudio = document.getElementById("specialisationAudio"); 
 var classifiedAudio = document.getElementById("classifiedAudio"); 
-var assignMissionAudio = document.getElementById("assignMissionAudio"); 
-var accessDeniedAudio = document.getElementById("accessDeniedAudio"); 
+var assignMissionAudio = document.getElementById("assignMissionAudio");
 
+// COOKIE POLICY VARIABLES
+var cookieBanner = document.getElementById("cookieBanner");
+var cookieConsentButton = document.getElementById("cookieConsentButton");
 
+// VARIABLES FOR LANDING PAGE;
 var openingCredits = document.getElementById("fly-in");
 var wakeupButton = document.getElementById("wakeQassandraButton");
 var menu = document.getElementById("menu");
-var menuBackground = document.getElementById("menuBlur");
-var menuButton = document.getElementById("menuButton"); 
+var menuBackground = document.getElementById("menuBlur"); // THIS VARIABLE WILL BE NEEDED IN ALL JS FILES
+// var menuButton = document.getElementById("menuButton"); 
 var showCanvas = document.getElementById("canvasDiv");
 var skipIntro = document.querySelector('.skip');
 // var aboutUsButtons = document.querySelector('.aboutus-buttons'); 
 
+// VARIABLES MENU BUTTONS
 var findOutMore = document.getElementById("buttonOne");
 var quadrithmSpecilisations = document.getElementById("buttonTwo");
 var classifiedMissions = document.getElementById("buttonThree");
 var assignMission = document.getElementById("buttonFour");
-const glitchOverlay = document.getElementById('glitchOverlay');
-var assignMissionButton = document.getElementById('assignMission');
-var accessDeniedButton = document.getElementById("missionsFolder"); 
 
 
-const outputDiv = document.getElementById('output');
-const cursor = document.querySelector('.cursor');
-const lines = [
-    "Connecting to a secure server...",
-    "Encrypting phone line...",
-    "Access granted. Welcome, visitor...",
-    "Use the button below to assign a mission to the team...",
-    "You have the license to spill..."
-];
-let lineIndex = 0;
-let charIndex = 0;
-let typingSpeed = 50; // milliseconds
-
-
+// VARIABLES FOR MENU BLUR WHICH WILL BE NEEDED IN ALL JS FILES
 var collapseElementList = [].slice.call(document.querySelectorAll('.collapse'));
 collapseElementList[2].addEventListener('show.bs.collapse', function () {
 		// do something...
@@ -48,24 +37,13 @@ collapseElementList[2].addEventListener('hide.bs.collapse', function () {
 			menuBackground.setAttribute('class', '');
 });
 
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
 
-window.addEventListener('hide.bs.modal', event => {
-    event.target.inert = true
-})
-
-window.addEventListener('show.bs.modal', event => {
-    event.target.inert = false
-})
-
-
+// VARIABLE FOR WAKE BUTTON
 var wakeTimeout;
-var aboutUsButtonsTimeout;
+// var aboutUsButtonsTimeout;
 
 
+// CODE FOR MENU BUTTONS NEEDED IN ALL JS FILES
 findOutMore.addEventListener("mouseover", playAboutQuadrithmAudio);
 findOutMore.addEventListener("mouseout", function (){
 	aboutQuadrithmAudio.pause();
@@ -90,33 +68,28 @@ assignMission.addEventListener("mouseout", function(){
 	assignMissionAudio.currentTime=0;
 });
 
-
+// CODE FOR LANDING PAGE;
 window.addEventListener("load", showWakeButton, false);
 // window.addEventListener("load", showAboutUsButtons, false);
 window.addEventListener("load", disappearSkipButton, false);
 // mediaQuery.addEventListener("change", menuBlur);
-// window.addEventListener("load", type, false);
-document.addEventListener('DOMContentLoaded', () => {
-    typeLine();
-	triggerGlitch(800, 'random');
-	showAssignButton();
-});
 
 
-// menuButton.addEventListener("click", toggleMenu);
-accessDeniedButton.addEventListener("click", playAccessDeniedAudio); 
+// CODE FOR INTRO SCENE ON LANDING PAGE
 wakeupButton.addEventListener("click", hideOpeningCredits);
 wakeupButton.addEventListener("click", removeWakeQassandraButton);
-wakeupButton.addEventListener("click", playAudio); 
+wakeupButton.addEventListener("click", playQassandraIntro); 
 wakeupButton.addEventListener("click", showQassandra);
 wakeupButton.addEventListener("click", showElements, false);
 wakeupButton.addEventListener("click", removeSkipButton);
 skipIntro.addEventListener("click", startStory);
+cookieConsentButton.addEventListener("click", acceptCookiePolicy);
 
 
 
 
 
+// QASSANDRA SPHERE VARIABLE
 var sphereRad = 280; //or should we make it 300?
 
 
@@ -131,62 +104,73 @@ Debugger.log = function(message) {
 	}
 }
 
-
+// FOR LANDING PAGE;
 function showElements(){
 	canvasApp();
 	setTimeout(showMenu, 3000);
+	setTimeout(showCookiePolicy, 5000);
 }
 
+// FOR LANDING PAGE;
 function startStory(){
 	skipIntro.style.display = 'none'; //all I have to do now is figure out how to remove the opening credits;
 	clearTimeout(wakeTimeout);
 	hideOpeningCredits();
 	removeWakeQassandraButton();
-	playAudio();
+	playQassandraIntro();
 	showQassandra();
 	showElements();
 }
 
+// FOR THE QASSANDRA ANIMATION
 function windowLoadHandler() {
 	canvasApp();
 }
 
+// FOR THE QASSANDRA ANIMATION
 function canvasSupport() {
 	return Modernizr.canvas;
 }
 
+// THIS CODE HIDES THE OPENEING CREDITS
 function hideOpeningCredits(){ //try using visibility instead;
 	// openingCredits.style.visibility = 'hidden'; 
 	openingCredits.style.display = 'none';
 	
 }
 
+// HIDES THE SKIP BUTTON
 function removeSkipButton(){
 	skipIntro.style.display = 'none';
 }
 
+// REMOVES THE SKIP BUTTON
 function disappearSkipButton (){
 	setTimeout(removeSkipButton, 33000);	
 }
 
+// SHOWS THE SKIP BUTTON
 function showSkipButton(){
 	setTimeout(skipIntro.style.visibility = 'visible', 3000);
 }
 
+// SHOWS QASSANDRA ANIMATION
 function showQassandra(){
 	showCanvas.style.display = 'block';
 }
 
+// REMOVES THE WAKE BUTTON
 function removeWakeQassandraButton(){
 	wakeupButton.style.display = 'none';
 }
 
+// SHOES THE WAKE BUTTON WITH AN ANIMATION
 function showWakeButton (){
 
 	wakeTimeout = setTimeout(function(){
 		wakeupButton.style.display = 'block';
 		wakeupButton.classList.add('animate__animated', 'animate__zoomIn');
-	},33000);	
+	},40000);	// put it back to 33000 
 
 	  wakeupButton.onanimationend = () => {
 		wakeupButton.classList.remove('animate__animated', 'animate__zoomIn');
@@ -201,7 +185,7 @@ function showWakeButton (){
 // 	},30000);	
 // }
 
-
+// SHOWS THE MENU BUTTON WITH AN ANIMATION
 function showMenu (){
 	menu.style.visibility = "visible";
 	menu.classList.add('animate__animated', 'animate__fadeInDown');
@@ -226,93 +210,45 @@ function showMenu (){
 	
 // }
 
+// REMOVED THE COOKIE BANNER ONCE VISITOR ACCEPTS
+function acceptCookiePolicy(){
+	cookieBanner.style.display = 'none';
+}
 
+function showCookiePolicy(){
+	cookieBanner.style.display = 'block';
+	cookieBanner.classList.add('animate__animated', 'animate__fadeIn');
+
+}
+
+// PLAYS THE ABOUT QUADRITHM AUDIO
 function playAboutQuadrithmAudio(){
 	aboutQuadrithmAudio.play();
 }
 
+// PLAYS THE SPECIALISATION AUDIO
 function playSpecialisationAudio(){
 	specialisationAudio.play();
 }
 
+// PLAYS THE CLASSIFIED AUDIO FOR THE MISSIONS COMPLETED MENU BUTTON
 function playClassifiedAudio(){
 	classifiedAudio.play();
 }
 
+// PLAYS THE ASSIGN MISSION AUDIO FOR THE CONTACT PAGE
 function playAssignMissionAudio(){
 	assignMissionAudio.play();
 }
 
-function playAccessDeniedAudio(){
-	accessDeniedAudio.play();
-}
-
-
-function playAudio(){
-	audio.play();
-}
-
-function typeLine() {
-    if (lineIndex < lines.length) {
-        if (charIndex < lines[lineIndex].length) {
-            outputDiv.textContent += lines[lineIndex].charAt(charIndex);
-            charIndex++;
-            setTimeout(typeLine, typingSpeed);
-        } else {
-            outputDiv.textContent += '\n'; // Add a new line after each message
-            lineIndex++;
-            charIndex = 0;
-            setTimeout(typeLine, 1000); // Pause before next line
-        }
-    } else {
-        cursor.style.display = 'none';
-    }
-}
-
-function showAssignButton (){
-
-	wakeTimeout = setTimeout(function(){
-		assignMissionButton.style.display = 'block';
-		assignMissionButton.classList.add('animate__animated', 'animate__fadeIn');
-	},10000);	
-
-	//   wakeupButton.onanimationend = () => {
-	// 	wakeupButton.classList.remove('animate__animated', 'animate__zoomIn');
-	// 	wakeupButton.classList.add('animate__animated', 'animate__bounce');
-	//   };
-}
-
-
- /**
- * Triggers a visual glitch effect on the terminal.
- */
-
-function triggerGlitch(duration = 500, type = 'normal') {
-	terminalContainer.classList.add('glitch-active');
-	// playStatic(); // Play static sound during glitch
-
-	if (type === 'random') {
-		const types = ['normal', 'scanline', 'rgb'];
-		type = types[Math.floor(Math.random() * types.length)];
-	}
-
-	if (type === 'scanline') {
-		terminalContainer.classList.add('glitch-scanline');
-	} else if (type === 'rgb') {
-		terminalContainer.classList.add('glitch-rgb-split');
-	}
-
-	setTimeout(() => {
-		terminalContainer.classList.remove('glitch-active');
-		terminalContainer.classList.remove('glitch-scanline');
-		terminalContainer.classList.remove('glitch-rgb-split');
-	}, duration);
+// PLAYS THE QASSANDRA INTRO ON THE LANDING PAGE
+function playQassandraIntro(){
+	qassandraIntro.play();
 }
 
 
 
-
-
+// ALL OF THIS CODE IS FOR THE QASSANDRA SPHERE ANIMATION
 function canvasApp() {
 	
 	var theCanvas = document.getElementById("canvasOne");
